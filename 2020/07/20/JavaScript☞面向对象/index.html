@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>JavaScript☞面向对象 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="JavaScript☞面向对象首先是如何创建一个对象，对啦，在JavaScript中可以使用构造函数来创建一个对象,构造函数则比较像类 12345678910111213141516171819202122232425262728293031323334&#x2F;*    工厂模式：        1.原料        2.加工        3.出厂        【注】凡是满足上述三个步骤创建对象的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript☞面向对象">
+<meta property="og:url" content="http://yoursite.com/2020/07/20/JavaScript%E2%98%9E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="JavaScript☞面向对象首先是如何创建一个对象，对啦，在JavaScript中可以使用构造函数来创建一个对象,构造函数则比较像类 12345678910111213141516171819202122232425262728293031323334&#x2F;*    工厂模式：        1.原料        2.加工        3.出厂        【注】凡是满足上述三个步骤创建对象的">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-20T10:14:45.956Z">
+<meta property="article:modified_time" content="2020-06-28T02:09:19.145Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-JavaScript☞面向对象" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/20/JavaScript%E2%98%9E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="article-date">
+  <time datetime="2020-07-20T10:14:45.956Z" itemprop="datePublished">2020-07-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript☞面向对象
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="JavaScript☞面向对象"><a href="#JavaScript☞面向对象" class="headerlink" title="JavaScript☞面向对象"></a>JavaScript☞面向对象</h1><p>首先是如何创建一个对象，对啦，在JavaScript中可以使用构造函数来创建一个对象,构造函数则比较像类</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    工厂模式：</span></span><br><span class="line"><span class="comment">        1.原料</span></span><br><span class="line"><span class="comment">        2.加工</span></span><br><span class="line"><span class="comment">        3.出厂</span></span><br><span class="line"><span class="comment">        【注】凡是满足上述三个步骤创建对象的函数，我们把它叫做工厂方法。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        如果，我们某一个函数，使用new运算符去调用</span></span><br><span class="line"><span class="comment">            1.当前函数中的this指向新创建的对象</span></span><br><span class="line"><span class="comment">            2.自动完成1.原料和3.出厂操作</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        这种通过new调用函数，我们把它叫做构造函数，构造函数，充当类的作用</span></span><br><span class="line"><span class="comment">        【注】构造函数一般情况下首字母大写</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">name, sex</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//1.原料</span></span><br><span class="line">    <span class="comment">// var obj = new Object();</span></span><br><span class="line">    <span class="comment">//2.加工</span></span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.sex = sex;</span><br><span class="line">    <span class="comment">// this.show = function()&#123;</span></span><br><span class="line">    <span class="comment">//     alert("I am " + this.name + "sex: " + this.sex);</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line">    <span class="comment">//3.出厂</span></span><br><span class="line">    <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br><span class="line">createPerson.prototype.show = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="string">"I am "</span> + <span class="keyword">this</span>.name + <span class="string">"sex: "</span> + <span class="keyword">this</span>.sex);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj1 =<span class="keyword">new</span> createPerson(<span class="string">"Dopp"</span>, <span class="string">"male"</span>);<span class="comment">//创建了一个对象</span></span><br><span class="line"><span class="keyword">var</span> obj2 =<span class="keyword">new</span> createPerson(<span class="string">"li"</span>, <span class="string">"famale"</span>);<span class="comment">//创建了另一个对象</span></span><br><span class="line"><span class="comment">/*不过构造函数当然也是函数，解构同样适用，再此不在举例*/</span></span><br><span class="line">alert(obj1.show === obj2.show);</span><br></pre></td></tr></table></figure>
+
+<p>仿照此，数组也是对象，可以给数组添加自己的方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="keyword">var</span> arr2 = [<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>];</span><br><span class="line"><span class="comment">//添加求和函数sum</span></span><br><span class="line">arr1.sum = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">0</span>; i &lt; <span class="keyword">this</span>.length; i++)&#123;</span><br><span class="line">        sum += <span class="keyword">this</span>[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line">alert(arr1.sum());</span><br></pre></td></tr></table></figure>
+
+<p>对象拷贝</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">    a:<span class="number">100</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj2 = obj1;</span><br><span class="line">obj2.a = <span class="number">1</span>;</span><br><span class="line"><span class="comment">//此时obj1的a也发生了改变</span></span><br><span class="line">alert(obj1.a);<span class="comment">//me：复杂数据结构传地址,浅拷贝</span></span><br><span class="line"><span class="keyword">var</span> obj3 = &#123;&#125;;</span><br><span class="line"><span class="comment">//将原来的数据复制一份传进去</span></span><br><span class="line"><span class="keyword">for</span>(i <span class="keyword">in</span> obj1)&#123;</span><br><span class="line">    obj3[i] = obj1[i];</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">obj3.a = <span class="number">3</span>;</span><br><span class="line">alert(obj1.a);</span><br><span class="line">alert(obj3.a);</span><br></pre></td></tr></table></figure>
+
+<p>聊聊prototype原型对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    prototype   原型对象</span></span><br><span class="line"><span class="comment">    概念：每一个函数上，都有一个原型对象prototype</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    用在构造函数上，我们可以给构造函数的原型prototype，添加方法</span></span><br><span class="line"><span class="comment">    1.如果我们将方法添加到构造函数的原型prototype对象上。</span></span><br><span class="line"><span class="comment">    2，构造函数构造出来的对象共享数据原型上所有的方法。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> arr1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="keyword">var</span> arr2 = [<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>];</span><br><span class="line"><span class="comment">// arr1.sum = function()&#123;</span></span><br><span class="line"><span class="comment">//     var sum = 0;</span></span><br><span class="line"><span class="comment">//     for(var i =0; i &lt; this.length; i++)&#123;</span></span><br><span class="line"><span class="comment">//         sum += this[i];</span></span><br><span class="line"><span class="comment">//     &#125;</span></span><br><span class="line"><span class="comment">//     return sum;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"><span class="comment">// alert(arr1.sum());</span></span><br><span class="line"><span class="comment">// arr2.sum = function()&#123;</span></span><br><span class="line"><span class="comment">//     var sum = 0;</span></span><br><span class="line"><span class="comment">//     for(var i =0; i &lt; this.length; i++)&#123;</span></span><br><span class="line"><span class="comment">//         sum += this[i];</span></span><br><span class="line"><span class="comment">//     &#125;</span></span><br><span class="line"><span class="comment">//     return sum;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"><span class="comment">// alert(arr2.sum());</span></span><br><span class="line"><span class="comment">// alert(arr1.sum === arr2.sum);</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.sum = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">0</span>; i &lt; <span class="keyword">this</span>.length; i++)&#123;</span><br><span class="line">        sum += <span class="keyword">this</span>[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line">alert(arr1.sum());</span><br><span class="line">alert(arr2.sum());</span><br><span class="line">alert(arr1.sum === arr2.sum);</span><br></pre></td></tr></table></figure>
+
+<p><em>prototype原型对象，me:算是添加类的公共方法</em></p>
+<h2 id="重点来了（其实我也不知道算重点不算，嘻嘻）"><a href="#重点来了（其实我也不知道算重点不算，嘻嘻）" class="headerlink" title="重点来了（其实我也不知道算重点不算，嘻嘻）"></a>重点来了（其实我也不知道算重点不算，嘻嘻）</h2><h3 id="继承、封装、多态"><a href="#继承、封装、多态" class="headerlink" title="继承、封装、多态"></a>继承、封装、多态</h3><p>例子来喽：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    面向对象（ECMA6以后）</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Dog</span>(<span class="params">&#123;name, type, age&#125;</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//this = new Object();</span></span><br><span class="line">    <span class="comment">//添加属性</span></span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line">Dog.prototype = &#123;</span><br><span class="line">    run:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="string">"I am"</span> + <span class="keyword">this</span>.name + <span class="string">" aged "</span> + <span class="keyword">this</span>.age )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    分类更加细分的构造函数  继承</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Teddy</span>(<span class="params">&#123;name, age, color&#125;</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//1.继承父一级构造函数的所有属性</span></span><br><span class="line">    Dog.call(<span class="keyword">this</span>, &#123;</span><br><span class="line">        name:name,</span><br><span class="line">        age:age</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">this</span>.color = color;</span><br><span class="line">    <span class="comment">//return this;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Teddy.prototype = Dog.prototype;  非常错误的写法,这相当于赋值Dog类的prototype给Teddy类，而不是添加在Teddy类的prototype上</span></span><br><span class="line"><span class="comment">// Teddy.prototype = Dog.prototype;</span></span><br><span class="line"><span class="comment">//正确写法</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    原型链继承</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> funcName <span class="keyword">in</span> Dog.prototype)&#123;</span><br><span class="line">    Teddy.prototype[funcName] = Dog.prototype[funcName];</span><br><span class="line">&#125;</span><br><span class="line">Teddy.prototype.showColor = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="keyword">this</span>.color);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> xiaobai = <span class="keyword">new</span> Teddy(&#123;</span><br><span class="line">    name:<span class="string">"xiaobai"</span>,</span><br><span class="line">    color:<span class="string">"white"</span>,</span><br><span class="line">    age:<span class="number">6</span></span><br><span class="line">&#125;)</span><br><span class="line">alert(xiaobai.color)</span><br><span class="line"><span class="comment">// xiaobai.run();//me:不继承方法</span></span><br><span class="line"></span><br><span class="line">xiaobai.run();<span class="comment">//现在可以了</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//重写方法</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    只会在子一级生效，并不会影响到父一级构造函数的方法</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    继承和多态是同一件事的两种完全不同侧重</span></span><br><span class="line"><span class="comment">    继承：侧重是从父一级的构造函数，继承到的属性和方法。</span></span><br><span class="line"><span class="comment">    多态：侧重是，子一级自己重写和新增的属性和方法。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">Teddy.prototype.run = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="string">"I am"</span> + <span class="keyword">this</span>.name + <span class="string">" aged "</span> + <span class="keyword">this</span>.age + <span class="string">" color:"</span> + <span class="keyword">this</span>.color );</span><br><span class="line">&#125;</span><br><span class="line">xiaobai.run();</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    构造函数构造出来的对象，有一个属性__proto__,指向构造出这个对象的构造函数的原型</span></span><br><span class="line"><span class="comment">    __proto__关键字</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">alert(xiaobai.__proto__ == Teddy.prototype);<span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    instanof关键字</span></span><br><span class="line"><span class="comment">    功能：判断一个对象是否是由这个构造函数构造出来的。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">alert(xiaobai <span class="keyword">instanceof</span> Teddy);</span><br><span class="line">alert(xiaobai <span class="keyword">instanceof</span> <span class="built_in">Object</span>);</span><br></pre></td></tr></table></figure>
+
+<p>ECAM6还有Class，暂时留白</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/20/JavaScript%E2%98%9E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" data-id="ckcuct4bc000oqgvdhnzv3lwq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/07/20/JavaScript%E2%98%9E%E8%AE%A4%E8%AF%86BOM/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          JavaScript☞认识BOM
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/07/20/JavaScript%E2%98%9E%E4%BE%8B%E5%AD%90%E6%90%9E%E5%AE%9A%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JavaScript☞例子搞定事件监听</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/07/20/%E5%AD%97%E7%AC%A6%E4%B8%B2/">字符串</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/20/%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F%E7%89%87%E5%A4%B4/">严格模式片头</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/20/%E8%87%AA%E5%B7%B1%E5%AE%9E%E7%8E%B0getElementsByClassName/">自己实现getElementsByClassName</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/20/%E6%96%87%E6%A1%A3%E7%A2%8E%E7%89%87%E5%AE%9E%E4%BE%8B/">文档碎片实例</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/20/%E6%B7%BB%E5%8A%A0%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9%E6%93%8D%E4%BD%9C/">添加删除节点操作</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

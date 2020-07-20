@@ -64,10 +64,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-git的使用" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-字符串" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/07/20/git%E7%9A%84%E4%BD%BF%E7%94%A8/" class="article-date">
-  <time datetime="2020-07-20T07:50:13.619Z" itemprop="datePublished">2020-07-20</time>
+    <a href="/2020/07/20/%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="article-date">
+  <time datetime="2020-07-20T10:14:48.171Z" itemprop="datePublished">2020-07-20</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/20/git%E7%9A%84%E4%BD%BF%E7%94%A8/">git的使用</a>
+      <a class="article-title" href="/2020/07/20/%E5%AD%97%E7%AC%A6%E4%B8%B2/">字符串</a>
     </h1>
   
 
@@ -86,214 +86,85 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="git的使用"><a href="#git的使用" class="headerlink" title="git的使用"></a>git的使用</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>index<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">        /*</span><br><span class="line">            1.cd 路径   进入当前目录</span><br><span class="line">            2.配置git基本操作</span><br><span class="line">                【注】没有消息就是好消息</span><br><span class="line">            </span><br><span class="line">            3.git init      在本地进行初始化（建立暂存区）</span><br><span class="line">                .git 文件存储当前项目的所有版本信息</span><br><span class="line"></span><br><span class="line">            4.工作区 =&gt; 暂存区</span><br><span class="line">                git add 文件名</span><br><span class="line">                git add *       提交所有文件</span><br><span class="line"></span><br><span class="line"><span class="actionscript">                git commit -m <span class="string">"这次提交的描述"</span></span></span><br><span class="line"></span><br><span class="line">            5.查看当前工作区的状态</span><br><span class="line">                git status</span><br><span class="line">            6.从暂存区恢复文件到工作区</span><br><span class="line">                git checkout 文件名</span><br><span class="line">            7.查看工作区和暂存区版本的区别</span><br><span class="line">                git diff</span><br><span class="line">            8.clear 清屏操作</span><br><span class="line"></span><br><span class="line">            9.git log</span><br><span class="line">                查看已经提交到暂存区的历史版本</span><br><span class="line">            </span><br><span class="line">            10.恢复文件到指定的某一个版本</span><br><span class="line">                git reset --hard 版本号</span><br><span class="line">            </span><br><span class="line">            11.生成ssh密匙</span><br><span class="line"><span class="actionscript">                ssh-keygen -t rsa -C <span class="string">"你GitHub的注册邮箱的地址"</span></span></span><br><span class="line">            </span><br><span class="line">            windows电脑查找文件：我的电脑 =&gt; 用户 =&gt; 用户名文件夹 =&gt; .ssh(隐藏文件) =&gt; id_rsa.pub(存有密匙)</span><br><span class="line"></span><br><span class="line">            12.GitHub账户配置密匙：登录网站手动添加密匙</span><br><span class="line"></span><br><span class="line">            13.暂存区 =&gt; 远程仓库</span><br><span class="line">                git git remote add origin 仓库地址</span><br><span class="line"><span class="actionscript">                    e.g.    git git remote add origin https:<span class="comment">//github.com/Dopphu/testDemo.git</span></span></span><br><span class="line">                git push -u origin master</span><br><span class="line">            【注】提交过程可能需要你输入用户名，密码。</span><br><span class="line"></span><br><span class="line">            14.git clone</span><br><span class="line">                从远程仓库克隆项目到本地</span><br><span class="line">            </span><br><span class="line">            15.git pull</span><br><span class="line">                从远程仓库同步本地代码</span><br><span class="line">        */</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>第一个文件<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/20/git%E7%9A%84%E4%BD%BF%E7%94%A8/" data-id="ckcu7nxzb00005svdh44ahisx" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-将hexo博客部署到GitHub上" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/18/%E5%B0%86hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0GitHub%E4%B8%8A/" class="article-date">
-  <time datetime="2020-07-18T12:18:53.189Z" itemprop="datePublished">2020-07-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/18/%E5%B0%86hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0GitHub%E4%B8%8A/">将hexo博客部署到GitHub上</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="将hexo博客部署到GitHub上"><a href="#将hexo博客部署到GitHub上" class="headerlink" title="将hexo博客部署到GitHub上"></a>将hexo博客部署到GitHub上</h1><p><strong>准备工作</strong>：安装git，nodejs（因为外网被墙下载慢的问题百度解决），注册GitHub账号</p>
-<ul>
-<li>首先使用nodejs的npm命令全局安装node.js</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-<p>然后可以使用命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo -v</span><br></pre></td></tr></table></figure>
-
-<p>查看hexo是否安装成功，安装成功之后新建一个文件夹（例如：mkdir BLOG）用来存放相关文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></table></figure>
-
-<p>执行该命令，初始化博客</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
-
-<p>部署在本地，通过localhost:4000访问</p>
-<ul>
-<li>接下来往GitHub部署</li>
-</ul>
-<p>创建一个仓库</p>
-<p>注：仓库名为 <strong>昵称.github.io</strong></p>
-<p>然后安装一个git插件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
-
-<p>设置<code>_config.yml</code>文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">在#Deployment的deploy进行编辑</span><br><span class="line">deploy:</span><br><span class="line">	type: git</span><br><span class="line">	repo: https:&#x2F;&#x2F;github.com&#x2F;Dopphu&#x2F;Dopphu.github.io.git -&gt;刚刚新建的仓库地址</span><br><span class="line">	branch: master</span><br></pre></td></tr></table></figure>
-
-<p>注意：type和repo等的冒号后面是有一个空格的</p>
-<p>接下来就简单了</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-
-<p>将博客推到远端的GitHub仓库</p>
-<p>补充：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
-
-<p>↑ 生成静态页面</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
-
-<p>↑清除静态页面</p>
-<p>这两个结合<code>hexo d</code>和<code>hexo s</code>就基本实现了博客的更新啦</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/18/%E5%B0%86hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0GitHub%E4%B8%8A/" data-id="ckcrmbkjg0003x0vd4u270dqy" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hexo博客框架的使用" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/18/hexo%E5%8D%9A%E5%AE%A2%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BD%BF%E7%94%A8/" class="article-date">
-  <time datetime="2020-07-18T12:18:53.173Z" itemprop="datePublished">2020-07-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/18/hexo%E5%8D%9A%E5%AE%A2%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BD%BF%E7%94%A8/">hexo博客框架的使用</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="hexo博客框架的使用"><a href="#hexo博客框架的使用" class="headerlink" title="hexo博客框架的使用"></a>hexo博客框架的使用</h1><p>准备工作：</p>
-<p>安装node，git，注册申请GitHub的账号，过程中还要给GitHub配置ssh密匙</p>
-<p>接下来就要开始安装了</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/18/hexo%E5%8D%9A%E5%AE%A2%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BD%BF%E7%94%A8/" data-id="ckcrmbkij0000x0vdfap13bue" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-npm命令下载速度缓慢的解决办法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/18/npm%E5%91%BD%E4%BB%A4%E4%B8%8B%E8%BD%BD%E9%80%9F%E5%BA%A6%E7%BC%93%E6%85%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" class="article-date">
-  <time datetime="2020-07-18T12:18:53.173Z" itemprop="datePublished">2020-07-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/18/npm%E5%91%BD%E4%BB%A4%E4%B8%8B%E8%BD%BD%E9%80%9F%E5%BA%A6%E7%BC%93%E6%85%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">npm命令下载速度缓慢的解决办法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="npm命令下载速度缓慢的解决办法"><a href="#npm命令下载速度缓慢的解决办法" class="headerlink" title="npm命令下载速度缓慢的解决办法"></a>npm命令下载速度缓慢的解决办法</h1><h2 id="使用淘宝镜像"><a href="#使用淘宝镜像" class="headerlink" title="使用淘宝镜像"></a>使用淘宝镜像</h2><ul>
-<li>执行这行命令</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> -g registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/18/npm%E5%91%BD%E4%BB%A4%E4%B8%8B%E8%BD%BD%E9%80%9F%E5%BA%A6%E7%BC%93%E6%85%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" data-id="ckcrmbkjb0001x0vd6628c4l3" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-在官网下载nodejs和git速度很慢的解决方法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/18/%E5%9C%A8%E5%AE%98%E7%BD%91%E4%B8%8B%E8%BD%BDnodejs%E5%92%8Cgit%E9%80%9F%E5%BA%A6%E5%BE%88%E6%85%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="article-date">
-  <time datetime="2020-07-18T12:18:53.126Z" itemprop="datePublished">2020-07-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/18/%E5%9C%A8%E5%AE%98%E7%BD%91%E4%B8%8B%E8%BD%BDnodejs%E5%92%8Cgit%E9%80%9F%E5%BA%A6%E5%BE%88%E6%85%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">在官网下载nodejs和git速度很慢的解决方法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="在官网下载nodejs和git速度很慢的解决方法"><a href="#在官网下载nodejs和git速度很慢的解决方法" class="headerlink" title="在官网下载nodejs和git速度很慢的解决方法"></a>在官网下载nodejs和git速度很慢的解决方法</h1><ul>
-<li><p>node.js</p>
-<p>在官网速度慢到崩溃</p>
-<p><strong>后来在这里下载几秒钟结束战斗：<a href="http://nodejs.cn/download/" target="_blank" rel="noopener">http://nodejs.cn/download/</a></strong></p>
+        <h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><h2 id="字符串的声明"><a href="#字符串的声明" class="headerlink" title="字符串的声明"></a>字符串的声明</h2><ol>
+<li><p>通过new运算符去声明字符串</p>
 </li>
-<li><p>git</p>
-<p>下载git是需要外网的，没有外网就会很慢，但是我们这种老实人不会做违法犯罪的事，我们就用内网下载，下载链接：<a href="https://npm.taobao.org/mirrors/git-for-windows/" target="_blank" rel="noopener">https://npm.taobao.org/mirrors/git-for-windows/</a></p>
+<li><p>省略new声明字符串</p>
 </li>
-</ul>
+<li><p>字符串常量赋值</p>
+<p>例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str1 = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">"Dopphu"</span>);</span><br><span class="line"><span class="keyword">var</span> str2 = <span class="built_in">String</span>(<span class="string">"Dopphu"</span>);</span><br><span class="line"><span class="keyword">var</span> str3 = <span class="string">"Dopphu"</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<h2 id="访问字符串中的字符"><a href="#访问字符串中的字符" class="headerlink" title="访问字符串中的字符"></a>访问字符串中的字符</h2><p>​    访问字符串中的字符：</p>
+<p>​        <code>字符串.length</code> 访问字符串的个数。</p>
+<p>​        【注】中文<code>utf-8</code>（三个字符表示一个汉字） <code>gbk</code>（两个字符表示一个汉字） 在计数时都是当做一个字符计算。</p>
+<p>​      访问字符串中单个字符：</p>
+<p>​        <code>字符串.charAt(下标)</code> 【注】从0开始</p>
+<p>​        字符串[下标]</p>
+<p>​      【注】字符串是只读的。</p>
+<h2 id="字符串查找的方法"><a href="#字符串查找的方法" class="headerlink" title="字符串查找的方法"></a>字符串查找的方法</h2><p><code>charCodeAt()</code></p>
+<p>​        格式：<code>字符串.charCodeAt(下标)</code></p>
+<p>​        功能：访问字符串中对应下标的ASCII码值。</p>
+<p><code>String.fromCharCode()</code></p>
+<p>​        格式：<code>String.fromCharCode()</code></p>
+<p>​        功能：将传入的ASCII码值转成对应的字符，返回这个对应的字符串。</p>
+<p><code>indexOf()</code></p>
+<p>​        格式：<code>supStr.indexOf(subStr,start);</code></p>
+<p>​        参数：第一个参数，查找的字符串</p>
+<p>​                   <code>start</code> 从哪个下标开始查,不传入则从零开始找</p>
+<p>​        功能：在<code>supStr</code>中查找<code>subStr</code>第一次出现的位置，从<code>start</code>开始查找</p>
+<p><code>lastIndexOf()</code></p>
+<p>​        格式：<code>字符串.lastIndexof()</code></p>
+<p>​        参数：字符串</p>
+<p>​        只有一个参数，查找最后一次出现的位置</p>
+<p><code>search()</code></p>
+<p>​        参数：字符串/正则表达式</p>
+<p>​        只能查找第一次出现的位置，不能指定范围</p>
+<h2 id="一点点正则"><a href="#一点点正则" class="headerlink" title="一点点正则"></a>一点点正则</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//i忽略大小写，g全局匹配</span></span><br><span class="line"><span class="keyword">var</span> demo1 = <span class="regexp">/Abc/i</span>;</span><br><span class="line"><span class="keyword">var</span> demo2 = <span class="regexp">/abc/g</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="字符串的方法"><a href="#字符串的方法" class="headerlink" title="字符串的方法"></a>字符串的方法</h2><p><code>substring</code></p>
+<p>​        格式：<code>字符串.substring(start, end)</code></p>
+<p>​        功能：将字符串中（start，end）部分提取，生成一个新字符串</p>
+<p>​        返回值：生成的新字符串。</p>
+<p><code>substr</code></p>
+<p>​        格式：<code>字符串.substr(start, length)</code> //length为要提取的长度</p>
+<p>​        返回值：返回新字符串。    </p>
+<p><code>slice()</code>//数组的方法，字符串也可以调用</p>
+<p>​        格式：<code>字符串.slice(start, end)</code></p>
+<p>​        返回值：返回新字符串</p>
+<p><code>split()</code>   字符串分割</p>
+<p>​        格式：字符串.split(分隔符, length)</p>
+<p>​        参数：</p>
+<p>​          第一个参数，用这个分割符进行分割</p>
+<p>​          第二个参数，控制返回数组的元素格式（返回数组中元素的个数），一般情况下不用</p>
+<p>​        功能：用分割符对原字符串分割，进行字符串分割，将分割完的子串放在数组中返回。</p>
+<p>​        返回值：数组</p>
+<p>​        【注意】</p>
+<p>​          1.相邻的两个分割符，会产生空字符串</p>
+<p>​          2.用空字符串分割则将每个字符单独分割成子串，放在数组中。</p>
+<p>转换大小写(产生新字符串，原字符串不变)</p>
+<p>​        <code>toLowerCase()</code></p>
+<p>​        <code>toUpperCase()</code></p>
+<p><code>contact</code>进行字符串拼接</p>
+<p>​        格式：<code>字符串.concat(str1[,str2...])</code></p>
+<p>​        参数：字符串</p>
+<p>​        功能：参数字符串会顺序接在原字符串后，生成新字符串原字符串不改变</p>
+<p>例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> demo = <span class="string">"Dppphu"</span></span><br><span class="line">alert(demo.concat(<span class="string">"asd"</span>,<span class="string">"asd"</span>));<span class="comment">//警告框输出		Dopphuasdasd</span></span><br><span class="line">alert(demo);<span class="comment">//警告框输出		Dopphu</span></span><br></pre></td></tr></table></figure>
+
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/18/%E5%9C%A8%E5%AE%98%E7%BD%91%E4%B8%8B%E8%BD%BDnodejs%E5%92%8Cgit%E9%80%9F%E5%BA%A6%E5%BE%88%E6%85%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" data-id="ckcrmbkje0002x0vd1bia7m3u" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/20/%E5%AD%97%E7%AC%A6%E4%B8%B2/" data-id="ckcuct4c40013qgvd9sm0b178" class="article-share-link">Share</a>
       
       
     </footer>
@@ -303,10 +174,10 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-严格模式片头" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/07/18/hello-world/" class="article-date">
-  <time datetime="2020-07-18T11:27:44.122Z" itemprop="datePublished">2020-07-18</time>
+    <a href="/2020/07/20/%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F%E7%89%87%E5%A4%B4/" class="article-date">
+  <time datetime="2020-07-20T10:14:48.078Z" itemprop="datePublished">2020-07-20</time>
 </a>
     
   </div>
@@ -317,7 +188,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/18/hello-world/">Hello World</a>
+      <a class="article-title" href="/2020/07/20/%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F%E7%89%87%E5%A4%B4/">严格模式片头</a>
     </h1>
   
 
@@ -325,24 +196,523 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+        <h1 id="严格模式片头"><a href="#严格模式片头" class="headerlink" title="严格模式片头"></a>严格模式片头</h1><p> 严格模式：写在哪个作用域下，在哪个作用域下生效。</p>
+<p>​        “use strict”;</p>
+<p>​       【注】尽量不要将严格模式写在全局（me：引入别人写的js会受限制）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">dmeo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="meta">   "use strict"</span>;</span><br><span class="line">    num = <span class="number">10</span>;</span><br><span class="line">    <span class="comment">//alert(num);这行语句取消注释后运行则会报错：Uncaught ReferenceError: num is not defined</span></span><br><span class="line">&#125;</span><br><span class="line">demo();<span class="comment">//已经不在num的作用域了</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/18/hello-world/" data-id="ckcrmbkjo0004x0vd8h7n7kzp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/20/%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F%E7%89%87%E5%A4%B4/" data-id="ckcuct4bg000sqgvdc6gocgi8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-自己实现getElementsByClassName" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/20/%E8%87%AA%E5%B7%B1%E5%AE%9E%E7%8E%B0getElementsByClassName/" class="article-date">
+  <time datetime="2020-07-20T10:14:48.078Z" itemprop="datePublished">2020-07-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/20/%E8%87%AA%E5%B7%B1%E5%AE%9E%E7%8E%B0getElementsByClassName/">自己实现getElementsByClassName</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="自己实现getElementsByClassName"><a href="#自己实现getElementsByClassName" class="headerlink" title="自己实现getElementsByClassName"></a>自己实现getElementsByClassName</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>自定义byClassName<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">        /*</span><br><span class="line">            node.getElementsByClassName()</span><br><span class="line">            这样IE8以下也可以用className来查找元素了</span><br><span class="line">        */</span><br><span class="line"><span class="actionscript">        <span class="function"><span class="keyword">function</span> <span class="title">elementsByClassName</span><span class="params">(node, classStr)</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">            <span class="comment">//1.获取node这个节点下所有节点</span></span></span><br><span class="line"><span class="actionscript">            <span class="keyword">var</span> nodes = node.getElementsByTagName(<span class="string">"*"</span>);</span></span><br><span class="line"><span class="actionscript">            <span class="keyword">var</span> arr = [];<span class="comment">//存放符合条件的节点。</span></span></span><br><span class="line"><span class="actionscript">            <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; nodes.length; i++)&#123;</span></span><br><span class="line">                if(nodes[i].className === classStr)&#123;</span><br><span class="line">                    arr.push(nodes[i]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"><span class="actionscript">            <span class="keyword">return</span> arr;</span></span><br><span class="line">        &#125;</span><br><span class="line"><span class="javascript">        <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> oL = <span class="built_in">document</span>.getElementById(<span class="string">"uli"</span>);</span></span><br><span class="line"><span class="actionscript">            <span class="keyword">var</span> nodes = elementsByClassName(oL,<span class="string">"box"</span>);</span></span><br><span class="line">            alert(nodes.length);</span><br><span class="line"><span class="actionscript">            <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; nodes.length; i++)&#123;</span></span><br><span class="line"><span class="actionscript">                nodes[i].style.backgroundColor = <span class="string">"red"</span>;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"uli"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span>111<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span>111<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">name</span>=<span class="string">"hello"</span>&gt;</span>111<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>111<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span>111<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"hello"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">name</span>=<span class="string">"hello"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ol</span> <span class="attr">id</span>=<span class="string">"oli"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/20/%E8%87%AA%E5%B7%B1%E5%AE%9E%E7%8E%B0getElementsByClassName/" data-id="ckcuct4ca001bqgvdb6z888hr" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-文档碎片实例" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/20/%E6%96%87%E6%A1%A3%E7%A2%8E%E7%89%87%E5%AE%9E%E4%BE%8B/" class="article-date">
+  <time datetime="2020-07-20T10:14:48.031Z" itemprop="datePublished">2020-07-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/20/%E6%96%87%E6%A1%A3%E7%A2%8E%E7%89%87%E5%AE%9E%E4%BE%8B/">文档碎片实例</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="文档碎片实例"><a href="#文档碎片实例" class="headerlink" title="文档碎片实例"></a>文档碎片实例</h1><p>文档碎片操作效率更高</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>文档碎片<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">        /*</span><br><span class="line">            创建10w个节点，添加到页面上</span><br><span class="line">        */</span><br><span class="line"><span class="javascript">        <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.time(<span class="string">"test1"</span>);</span></span><br><span class="line"><span class="actionscript">            <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i&lt;<span class="number">10000</span>;i++)&#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">var</span> newDiv = <span class="built_in">document</span>.createElement(<span class="string">"div"</span>);</span></span><br><span class="line"><span class="javascript">                <span class="built_in">document</span>.body.appendChild(newDiv);</span></span><br><span class="line">            &#125;</span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.timeEnd(<span class="string">"test1"</span>);<span class="comment">//test1: 76.470703125ms</span></span></span><br><span class="line">            /*</span><br><span class="line">                先创建好10w个节点，将10w节点插入到一个节点上，最后将这一个节点添加到页面上。</span><br><span class="line">            */</span><br><span class="line"><span class="actionscript">            <span class="comment">//文档碎片操作</span></span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.time(<span class="string">"test2"</span>);</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> node = <span class="built_in">document</span>.createElement(<span class="string">"div"</span>);</span></span><br><span class="line"><span class="actionscript">            <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i&lt;<span class="number">10000</span>;i++)&#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">var</span> newDiv = <span class="built_in">document</span>.createElement(<span class="string">"div"</span>);</span></span><br><span class="line">                node.append(newDiv);</span><br><span class="line">            &#125;</span><br><span class="line"><span class="javascript">            <span class="built_in">document</span>.body.appendChild(node);</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.timeEnd(<span class="string">"test2"</span>);<span class="comment">//test2: 30.001220703125ms</span></span></span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--empty--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/20/%E6%96%87%E6%A1%A3%E7%A2%8E%E7%89%87%E5%AE%9E%E4%BE%8B/" data-id="ckcuct4c80018qgvd7jn43e4y" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-添加删除节点操作" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/20/%E6%B7%BB%E5%8A%A0%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9%E6%93%8D%E4%BD%9C/" class="article-date">
+  <time datetime="2020-07-20T10:14:48.000Z" itemprop="datePublished">2020-07-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/20/%E6%B7%BB%E5%8A%A0%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9%E6%93%8D%E4%BD%9C/">添加删除节点操作</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="添加删除节点操作"><a href="#添加删除节点操作" class="headerlink" title="添加删除节点操作"></a>添加删除节点操作</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>节点操作案例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">        <span class="selector-id">#div1</span>&#123;</span></span><br><span class="line">            width: 400px;height: 100px;background-color: burlywood;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-id">#div2</span>&#123;</span></span><br><span class="line">            width: 400px;height: 500px;background-color: orange;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-id">#div2</span> <span class="selector-tag">div</span>&#123;</span></span><br><span class="line">            border: 1px dotted purple;padding: 2px;</span><br><span class="line">            position: relative;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-id">#div2</span> <span class="selector-tag">div</span> <span class="selector-tag">button</span>&#123;</span></span><br><span class="line">            position: absolute;</span><br><span class="line">            right: 0;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> oDiv1 = <span class="built_in">document</span>.getElementById(<span class="string">"div1"</span>);</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> oDiv2 = <span class="built_in">document</span>.getElementById(<span class="string">"div2"</span>);</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> oInput = <span class="built_in">document</span>.getElementById(<span class="string">"input1"</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">            <span class="comment">//获取div1下的面所有的button</span></span></span><br><span class="line"><span class="actionscript">            <span class="keyword">var</span> aBtns = oDiv1.getElementsByTagName(<span class="string">"button"</span>);</span></span><br><span class="line"><span class="actionscript">            <span class="comment">//分别给三个按钮添加不同的点击函数</span></span></span><br><span class="line"><span class="actionscript">            aBtns[<span class="number">0</span>].onclick = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span></span><br><span class="line">                if(!oInput.value)&#123;</span><br><span class="line"><span class="actionscript">                    alert(<span class="string">"输入内容不能为空！"</span>);</span></span><br><span class="line"><span class="actionscript">                &#125;<span class="keyword">else</span>&#123;</span></span><br><span class="line"><span class="actionscript">                    <span class="comment">//获取输入框中的内容，创建节点添加到页面上</span></span></span><br><span class="line"><span class="javascript">                    <span class="keyword">var</span> newDiv = <span class="built_in">document</span>.createElement(<span class="string">"div"</span>);</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">var</span> oTxt = <span class="built_in">document</span>.createTextNode(oInput.value);</span></span><br><span class="line">                    newDiv.appendChild(oTxt);</span><br><span class="line">                    oDiv2.appendChild(newDiv);</span><br><span class="line"><span class="actionscript">                    oInput.value = <span class="string">""</span>;</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"><span class="actionscript">            aBtns[<span class="number">1</span>].onclick = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">                <span class="comment">//删除最后一个节点</span></span></span><br><span class="line">                oDiv2.removeChild(oDiv2.lastChild);</span><br><span class="line">            &#125;</span><br><span class="line"><span class="actionscript">            aBtns[<span class="number">2</span>].onclick = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">var</span> newNode = oDiv2.lastChild.cloneNode(<span class="literal">true</span>);</span></span><br><span class="line">                oDiv2.appendChild(newNode);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div1"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"input1"</span> <span class="attr">placeholder</span>=<span class="string">"输入内容"</span>/&gt;</span><span class="tag">&lt;/<span class="name">br</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"add"</span>&gt;</span>增加<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"delete"</span>&gt;</span>删除<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"copy"</span>&gt;</span>拷贝<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div2"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--仅用来显示，无实际意义--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>xxx<span class="tag">&lt;<span class="name">button</span>&gt;</span>x<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>xxx<span class="tag">&lt;<span class="name">button</span>&gt;</span>x<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>xxx<span class="tag">&lt;<span class="name">button</span>&gt;</span>x<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/20/%E6%B7%BB%E5%8A%A0%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9%E6%93%8D%E4%BD%9C/" data-id="ckcuct4c90019qgvd0i2gdlut" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-算数运算符" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/20/%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6/" class="article-date">
+  <time datetime="2020-07-20T10:14:47.875Z" itemprop="datePublished">2020-07-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/20/%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6/">算数运算符</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符"></a>算数运算符</h1><p>运算符：</p>
+<p>​      1.算数运算符</p>
+<p>​        + - * / %（取余）</p>
+<p>​      2.关系运算符</p>
+<p>​        &gt; &lt; &gt;= &lt;= == != ===(恒等) !==</p>
+<p>​      3.逻辑运算符</p>
+<p>​        || &amp;&amp; !</p>
+<p>​      4.一元运算符</p>
+<p>​        ++ –</p>
+<p>​      5.赋值运算符</p>
+<p>​        &lt;1&gt;基本赋值运算符</p>
+<p>​        &lt;2&gt;复合赋值运算符 += -= … *=</p>
+<p>表达式：任何数据和运算符组成的式子</p>
+<p>自动数据类型转换：不同数据类型之间是没有办法进行运算，将数据转换为同一类型，再进行运算。</p>
+<p>​      1.其中有一个操作数必须为字符串，运算符必须是+号，别的会会转换为字符串，再进行字符串拼接。</p>
+<p>​      2.如果字符串中含有字符串以外的别的字符，转成NaN，NaN和任何数据类型运算都是NaN</p>
+<p>​      3.除了字符串以外的数据，在进行算数运算的时候，先转成数字，在进行运算。</p>
+<p>JS中除数可以为0，会得到</p>
+<p>   infinity（无穷大）-infinity（无穷小）</p>
+<p>例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="string">"Hellwo"</span>+<span class="literal">true</span>);<span class="comment">//Hellwotrue</span></span><br><span class="line">alert(<span class="string">"Hellwo"</span>+<span class="number">100</span>);<span class="comment">//Hellwo100</span></span><br><span class="line">alert(<span class="string">"Hellwo"</span>+<span class="literal">undefined</span>);<span class="comment">//Hellwoundefined</span></span><br><span class="line">alert(<span class="string">"Hellwo"</span>+<span class="literal">NaN</span>);<span class="comment">//HellwoNaN</span></span><br><span class="line"></span><br><span class="line">alert(<span class="number">100</span>-<span class="string">"1a"</span>);<span class="comment">//NaN</span></span><br><span class="line"></span><br><span class="line">alert(<span class="number">100</span>-<span class="literal">null</span>);<span class="comment">//100</span></span><br><span class="line">alert(<span class="number">100</span>-<span class="literal">true</span>);<span class="comment">//99</span></span><br><span class="line">alert(<span class="number">100</span>-<span class="literal">undefined</span>);<span class="comment">//NaN</span></span><br><span class="line">alert(<span class="number">100</span>-<span class="literal">NaN</span>);<span class="comment">//NaN</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/20/%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6/" data-id="ckcuct4c9001aqgvdh1q05zpe" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-数组" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/20/%E6%95%B0%E7%BB%84/" class="article-date">
+  <time datetime="2020-07-20T10:14:47.828Z" itemprop="datePublished">2020-07-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/20/%E6%95%B0%E7%BB%84/">数组</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><ol>
+<li><p>数组的声明</p>
+<p>​        1.通过new创建数组</p>
+<p>​        2.省略new运算符创建数组</p>
+<p>​        3.数组常量进行赋值（JS中一般使用中括号[]）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,...,n];</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>数组.length</code>返回数组中元素个数</p>
+<p>​    访问数组元素：</p>
+<p>​                数组[下标]  下标从0开始</p>
+</li>
+</ol>
+<p>乱入…</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.random(n,m);<span class="comment">//左闭右开，随机小数</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>for循环遍历数组</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> arr)&#123;</span><br><span class="line">    <span class="comment">//empty</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li><p>数组是引用数据类型</p>
+<p>​    数组，数组的变量存储的是数据的地址</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>];</span><br><span class="line">alert(arr);<span class="comment">//警告框：10,20,30,40</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>数组的方法</p>
+<p>数组的方法：</p>
+<p>​        栈结构：</p>
+<p>​          栈：木盆</p>
+<p>​          结构：从同一头进，从同一头出</p>
+<p>​          特点：先进后出</p>
+<p>​        数组的两个方法形成栈结构</p>
+<p>​          <code>push</code></p>
+<p>​            格式：<code>数组.push(参数1,参数2,...)</code></p>
+<p>​            功能：给数组的末尾添加元素。</p>
+<p>​            返回值：插完元素以后数组的长度。</p>
+<p>​          <code>pop</code></p>
+<p>​            格式：<code>数组.pop()</code></p>
+<p>​            参数：没有参数。</p>
+<p>​            返回值：取下的那一个元素。</p>
+<p>​            功能：从数组末尾取下一个元素。</p>
+<p>​        队列结构：</p>
+<p>​          结构：从末尾进，从头部出</p>
+<p>​          特点：先进先出</p>
+</li>
+</ol>
+<p>   ​            <code>push</code></p>
+<p>   ​            <code>shift()</code></p>
+<p>   ​              格式：<code>数组.shift()</code></p>
+<p>   ​              参数：没有参数。</p>
+<p>   ​              功能：从数组的头部取下一个元素。</p>
+<p>   ​              返回值：取下的元素。</p>
+<p>   ​            </p>
+<p>   ​            <code>unshift()</code></p>
+<p>   ​              格式：<code>数组.unshift(参数1,参数2,...)</code></p>
+<p>   ​              功能：从数组的头部插入元素。</p>
+<p>   ​              返回值：插完元素以后数组的长度。</p>
+<p>   ​              【注】就算传入的数据是数组，数组中的元素要单独挑出来再进行合并。</p>
+<p>   ​        <code>concat()</code></p>
+<p>   ​        1.拷贝原数组，生成新数组</p>
+<p>   ​        2.合并数组</p>
+<p>   ​          格式：<code>数组.contact(数据1,数据2,...)</code></p>
+<p>   ​          返回值：合并产生的新数组，原数组不会改变。</p>
+<p>   ​        <code>slice()</code></p>
+<p>   ​          格式：数组.slice(start,end) 区间左闭右开</p>
+<p>   ​          功能：可以基于当前数组获取指定区域的元素[start,end),提取出元素生成新数组。</p>
+<p>   ​          返回值：生成的新数组，原数组不会发生任何改变。</p>
+<p>   ​        </p>
+<p>   ​        <code>splice()</code></p>
+<p>   ​          格式：<code>数组.splice(start, length, 数据1, 数据2...)</code></p>
+<p>   ​          参数：</p>
+<p>   ​            start： 开始截取的位置</p>
+<p>   ​            length： 截取元素的长度（原数组发生改变）</p>
+<p>   ​            第三个及之后的参数： 在start位置，在原数组插入的元素</p>
+<p>   ​          返回值：截取下来的元素组成的数组 </p>
+<p>   ​          【注】在视觉上可以用来修改原数组的值</p>
+<p>   ​        </p>
+<p>   ​        <code>join()</code></p>
+<p>   ​          格式：<code>数组.join(字符串)</code></p>
+<p>   ​          功能：将数组中的元素，用传入的拼接符，拼接成一个字符串</p>
+<p>   ​          返回值：拼接好的新字符串,原数组不变。</p>
+<p>   ​    </p>
+<p>   ​        <code>reverse()</code> </p>
+<p>   ​          功能：将数组逆序，原数组改变</p>
+<p>   ​          返回值：已经逆序的原数组</p>
+<p>   ​        <code>sort()</code></p>
+<p>   ​          从小到大排序，默认按字符串排序</p>
+<p>   ​          参数：一个函数，代表你要怎样进行排序</p>
+<p>   ​            例如：</p>
+<pre><code>            <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">arr.sort(<span class="function"><span class="keyword">function</span> (<span class="params">value1,value2</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> value1 - value2;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//从小到大排序</span></span><br><span class="line"><span class="comment">//value1 和 value2换过来即为从大到小排序</span></span><br></pre></td></tr></table></figure>
+
+数组是引用数据类型</code></pre><p>   ​    数组，数组的变量存储的是数据的地址</p>
+<ol start="6">
+<li>二维数组（非官方概念）</li>
+</ol>
+<p>例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = <span class="built_in">Array</span>(</span><br><span class="line">            [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>],</span><br><span class="line">            [<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>],</span><br><span class="line">            <span class="number">100</span>,</span><br><span class="line">            [<span class="number">16</span>,<span class="number">17</span>,<span class="number">18</span>,<span class="number">19</span>,<span class="number">20</span>],</span><br><span class="line">            [<span class="number">21</span>,<span class="number">22</span>,<span class="number">23</span>,<span class="number">24</span>,<span class="number">25</span>]</span><br><span class="line">        );</span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li>ECMA6数组新特性待补充</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/20/%E6%95%B0%E7%BB%84/" data-id="ckcuct4c70017qgvd6l0l88hy" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-属性节点" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/20/%E5%B1%9E%E6%80%A7%E8%8A%82%E7%82%B9/" class="article-date">
+  <time datetime="2020-07-20T10:14:47.797Z" itemprop="datePublished">2020-07-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/20/%E5%B1%9E%E6%80%A7%E8%8A%82%E7%82%B9/">属性节点</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="属性节点"><a href="#属性节点" class="headerlink" title="属性节点"></a>属性节点</h1><p>直接上例子</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>attribute和元素属性<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">        /*</span><br><span class="line">            setAttribute</span><br><span class="line">            getAttribute</span><br><span class="line">            removeAttribute()</span><br><span class="line">        */</span><br><span class="line"><span class="javascript">        <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> oDiv = <span class="built_in">document</span>.getElementById(<span class="string">"div1"</span>);</span></span><br><span class="line"><span class="actionscript">            <span class="comment">// alert(oDiv.id);</span></span></span><br><span class="line"><span class="actionscript">            <span class="comment">// alert(oDiv.title);</span></span></span><br><span class="line"><span class="actionscript">            <span class="comment">// alert(oDiv.getAttribute("id"));</span></span></span><br><span class="line"><span class="actionscript">            <span class="comment">// alert(oDiv.getAttribute("title"));</span></span></span><br><span class="line">            </span><br><span class="line"><span class="actionscript">            <span class="comment">// /*</span></span></span><br><span class="line"><span class="actionscript">            <span class="comment">//     1.class的访问</span></span></span><br><span class="line"><span class="actionscript">            <span class="comment">// */</span></span></span><br><span class="line"><span class="actionscript">            <span class="comment">// /*区别1*/</span></span></span><br><span class="line"><span class="actionscript">            <span class="comment">// alert(oDiv.className);</span></span></span><br><span class="line"><span class="actionscript">            <span class="comment">// alert(oDiv.getAttribute("class"));</span></span></span><br><span class="line"><span class="actionscript">            <span class="comment">// /*区别2*/</span></span></span><br><span class="line"><span class="actionscript">            <span class="comment">// alert(oDiv.xxx);//自定义属性访问不到undefined</span></span></span><br><span class="line"><span class="actionscript">            <span class="comment">// alert(oDiv.getAttribute("xxx"));</span></span></span><br><span class="line">            </span><br><span class="line"><span class="actionscript">            <span class="comment">// oDiv.className = "000";</span></span></span><br><span class="line"><span class="actionscript">            <span class="comment">// oDiv.zzz = "zzz";</span></span></span><br><span class="line"><span class="actionscript">            <span class="comment">// oDiv.setAttribute("zzz","zzz");</span></span></span><br><span class="line"><span class="actionscript">            <span class="comment">// alert(oDiv.getAttribute("zzz"));</span></span></span><br><span class="line">            </span><br><span class="line"><span class="actionscript">            <span class="comment">//两种移除方式有区别</span></span></span><br><span class="line"><span class="actionscript">            <span class="comment">// oDiv.title = "";</span></span></span><br><span class="line"><span class="actionscript">            <span class="comment">//oDiv.removeAttribute("title");</span></span></span><br><span class="line"></span><br><span class="line">        /*</span><br><span class="line">            innerHTML     获取标签间内容</span><br><span class="line">            innerText     获取纯文本，不会解析标签设置纯文本</span><br><span class="line">            outerHTML     从外标签开始到外标签结束</span><br><span class="line">        */</span><br><span class="line">        alert(oDiv.innerHTML);</span><br><span class="line"><span class="handlebars"><span class="xml">        // oDiv.innerHTML = "<span class="tag">&lt;<span class="name">strong</span>&gt;</span>HELP<span class="tag">&lt;/<span class="name">strong</span>&gt;</span>"</span></span></span><br><span class="line"><span class="actionscript">        <span class="comment">// oDiv.innerText = ""</span></span></span><br><span class="line"><span class="handlebars"><span class="xml">        oDiv.innerText = "<span class="tag">&lt;<span class="name">strong</span>&gt;</span>HELP<span class="tag">&lt;/<span class="name">strong</span>&gt;</span>";</span></span></span><br><span class="line">        alert(oDiv.outerHTML);</span><br><span class="line"><span class="handlebars"><span class="xml">        oDiv.outerHTML = "<span class="tag">&lt;<span class="name">strong</span>&gt;</span>123<span class="tag">&lt;/<span class="name">strong</span>&gt;</span>";</span></span></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div1"</span> <span class="attr">title</span>=<span class="string">"hellow"</span> <span class="attr">class</span>=<span class="string">"box"</span> <span class="attr">xxx</span>=<span class="string">"自定义属性"</span>&gt;</span>div<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>attributes</code> 获取当前元素节点上的属性节点;//集合</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>属性节点<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">        /*</span><br><span class="line"><span class="actionscript">            attributes 获取当前元素节点上的属性节点;<span class="comment">//集合</span></span></span><br><span class="line">        */</span><br><span class="line"><span class="javascript">        <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="actionscript">            <span class="keyword">var</span> oDiv = sdocument.getElementById(<span class="string">"div1"</span>);</span></span><br><span class="line"><span class="actionscript">            <span class="comment">//getNamedItem() 方法可返回指定的节点。</span></span></span><br><span class="line"><span class="actionscript">            alert(oDiv.attributes.getNamedItem(<span class="string">"id"</span>).nodeType);</span></span><br><span class="line"><span class="actionscript">            alert(oDiv.attributes[<span class="string">"id"</span>].nodeType);</span></span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/20/%E5%B1%9E%E6%80%A7%E8%8A%82%E7%82%B9/" data-id="ckcuct4c50014qgvd26qx2jjh" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-事件练习" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/20/%E4%BA%8B%E4%BB%B6%E7%BB%83%E4%B9%A0/" class="article-date">
+  <time datetime="2020-07-20T10:14:47.750Z" itemprop="datePublished">2020-07-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/20/%E4%BA%8B%E4%BB%B6%E7%BB%83%E4%B9%A0/">事件练习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="事件练习"><a href="#事件练习" class="headerlink" title="事件练习"></a>事件练习</h1><p><strong>随鼠标移动的小方块</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>事件练习1<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">        *&#123;</span><br><span class="line">            margin: 0;padding: 0;</span><br><span class="line">        </span><br><span class="line">        &#125;</span><br><span class="line">        /* body&#123;</span><br><span class="line">            position: relative;</span><br><span class="line">        &#125; */</span><br><span class="line"><span class="css">        <span class="selector-id">#div1</span>&#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">width</span>: 208<span class="selector-tag">px</span>;<span class="selector-tag">height</span>: 208<span class="selector-tag">px</span>;<span class="selector-tag">background-color</span>: <span class="selector-tag">cyan</span>; <span class="selector-tag">position</span>: <span class="selector-tag">absolute</span>;<span class="comment">/*background: url("Lucky.jpg") no-repeat;*/</span></span></span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> oDiv = <span class="built_in">document</span>.getElementById(<span class="string">"div1"</span>);</span></span><br><span class="line"><span class="javascript">            <span class="built_in">document</span>.onmousemove = <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">var</span> e = ev || <span class="built_in">window</span>.event;</span></span><br><span class="line"><span class="actionscript">                <span class="comment">//使鼠标位于小方块大概中心的位置</span></span></span><br><span class="line"><span class="actionscript">                oDiv.style.left = e.clientX - <span class="number">104</span> + <span class="string">"px"</span>;</span></span><br><span class="line"><span class="actionscript">                oDiv.style.top = e.clientY - <span class="number">104</span> + <span class="string">"px"</span>;</span></span><br><span class="line">            &#125;               </span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>鼠标移动的小尾巴</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>事件练习2<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">        *&#123;</span><br><span class="line">            margin: 0;padding: 0;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-tag">div</span>&#123;<span class="attribute">position</span>: absolute;<span class="attribute">width</span>: <span class="number">20px</span>;<span class="attribute">height</span>: <span class="number">20px</span>;<span class="attribute">background-color</span>: cyan;<span class="attribute">border-radius</span>: <span class="number">10px</span>;<span class="attribute">position</span>: absolute;&#125;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> arr = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"div"</span>);</span></span><br><span class="line"><span class="javascript">            <span class="built_in">document</span>.onmousemove = <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">var</span> e = ev || <span class="built_in">window</span>.event;</span></span><br><span class="line"><span class="actionscript">            <span class="comment">//让下标为0的div跟随鼠标移动</span></span></span><br><span class="line"><span class="actionscript">                arr[<span class="number">0</span>].style.left = e.clientX + <span class="string">"px"</span>;</span></span><br><span class="line"><span class="actionscript">                arr[<span class="number">0</span>].style.top = e.clientY + <span class="string">"px"</span>;</span></span><br><span class="line"><span class="actionscript">                <span class="comment">//错落有致，前后相随，后一个落在前一个先前的位置，前一个再落到前前一个之前的位置...依次落</span></span></span><br><span class="line"><span class="actionscript">                <span class="keyword">for</span>(<span class="keyword">var</span> i = arr.length <span class="number">-1</span>; i &gt; [<span class="number">0</span>];i--)&#123;</span></span><br><span class="line"><span class="actionscript">                    arr[i].style.left = arr[i - <span class="number">1</span>].offsetLeft + <span class="string">"px"</span>;</span></span><br><span class="line"><span class="actionscript">                    arr[i].style.top = arr[i - <span class="number">1</span>].offsetTop + <span class="string">"px"</span>;</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;     </span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/20/%E4%BA%8B%E4%BB%B6%E7%BB%83%E4%B9%A0/" data-id="ckcuct4bh000uqgvda9bqco5z" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-事件对象" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/20/%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1/" class="article-date">
+  <time datetime="2020-07-20T10:14:47.735Z" itemprop="datePublished">2020-07-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/20/%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1/">事件对象</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h1><p><strong>事件绑定</strong></p>
+<p>元素节点.on + 事件类型 = 匿名函数;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">oBtn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//函数体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>【注】系统会在事件绑定一旦完成的时候，生成一个事件对象</p>
+<p><strong>下面获取事件对象</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> oBtn = <span class="built_in">document</span>.getElementById(<span class="string">"btn1"</span>);<span class="comment">//假设有这么一个按钮，嘻嘻</span></span><br><span class="line">    <span class="comment">// oBtn.onclick = show;</span></span><br><span class="line">    oBtn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>)</span>&#123;</span><br><span class="line">        <span class="comment">//这种通过形参拿事件对象的方式IE8以下不兼容。 IE8以下 window.event;</span></span><br><span class="line">        <span class="keyword">var</span> e = ev || <span class="built_in">window</span>.event;<span class="comment">//兼容处理</span></span><br><span class="line">        alert(e);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>事件对象的属性</strong></p>
+<ol>
+<li><p>鼠标事件</p>
+<p>button属性</p>
+<table>
+<thead>
+<tr>
+<th align="center">button属性的值</th>
+<th align="center">鼠标的键</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0</td>
+<td align="center">左键</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">滚轮</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">右键</td>
+</tr>
+</tbody></table>
+<p>获取当前鼠标位置ev.xxx：（原点位置不同）</p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>clientX</strong></th>
+<th align="center"><strong>clientY</strong></th>
+<th align="center"><strong>原点位置：可视窗口的左上角为原点</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><strong>pageX</strong></td>
+<td align="center"><strong>pageY</strong></td>
+<td align="center"><strong>原点位置：整个页面左上角(包含滚出去的滚动距离)</strong></td>
+</tr>
+<tr>
+<td align="center"><strong>screenX</strong></td>
+<td align="center"><strong>screenY</strong></td>
+<td align="center"><strong>原点位置：电脑屏幕左上角为原点</strong></td>
+</tr>
+</tbody></table>
+</li>
+<li><p>键盘事件</p>
+<p>属性：</p>
+<p>shiftKey  按下shift键，为true，默认为false</p>
+<p>altKey   </p>
+<p>ctrlKey   </p>
+<p>metaKey   windows系统   按下window键，为true</p>
+<p>​                   macos系统    按下command键，为true</p>
+<p>​        【注】和别的操作进行组合，形成一些快捷键操作</p>
+<p>//which在IE8及以下不支持</p>
+<p>​      <code>keyCode</code> 键码</p>
+<p>​      <code>which</code></p>
+<p>​      返回值：键码返回的是大写字母的ASCII值，不区分大小写，支持全键盘</p>
+<p>​      格式：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> which = e.which || e.keyCode;</span><br></pre></td></tr></table></figure>
+
+<p>​      【注】只在keydown下支持</p>
+<p>​      <code>charCode</code> 字符码</p>
+<p>​      <code>which</code></p>
+<p>​      格式：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> which = e.which || e.charCode;</span><br></pre></td></tr></table></figure>
+
+<p>​      【注】只在keypress(字符键0-9及26个字母)下支持,只支持字符</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/20/%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1/" data-id="ckcuct4bi000vqgvd8bzy7kdt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -353,6 +723,11 @@
 
   
 
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+  </nav>
 
 </section>
         
@@ -383,23 +758,23 @@
       <ul>
         
           <li>
-            <a href="/2020/07/20/git%E7%9A%84%E4%BD%BF%E7%94%A8/">git的使用</a>
+            <a href="/2020/07/20/%E5%AD%97%E7%AC%A6%E4%B8%B2/">字符串</a>
           </li>
         
           <li>
-            <a href="/2020/07/18/%E5%B0%86hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0GitHub%E4%B8%8A/">将hexo博客部署到GitHub上</a>
+            <a href="/2020/07/20/%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F%E7%89%87%E5%A4%B4/">严格模式片头</a>
           </li>
         
           <li>
-            <a href="/2020/07/18/hexo%E5%8D%9A%E5%AE%A2%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BD%BF%E7%94%A8/">hexo博客框架的使用</a>
+            <a href="/2020/07/20/%E8%87%AA%E5%B7%B1%E5%AE%9E%E7%8E%B0getElementsByClassName/">自己实现getElementsByClassName</a>
           </li>
         
           <li>
-            <a href="/2020/07/18/npm%E5%91%BD%E4%BB%A4%E4%B8%8B%E8%BD%BD%E9%80%9F%E5%BA%A6%E7%BC%93%E6%85%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">npm命令下载速度缓慢的解决办法</a>
+            <a href="/2020/07/20/%E6%96%87%E6%A1%A3%E7%A2%8E%E7%89%87%E5%AE%9E%E4%BE%8B/">文档碎片实例</a>
           </li>
         
           <li>
-            <a href="/2020/07/18/%E5%9C%A8%E5%AE%98%E7%BD%91%E4%B8%8B%E8%BD%BDnodejs%E5%92%8Cgit%E9%80%9F%E5%BA%A6%E5%BE%88%E6%85%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">在官网下载nodejs和git速度很慢的解决方法</a>
+            <a href="/2020/07/20/%E6%B7%BB%E5%8A%A0%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9%E6%93%8D%E4%BD%9C/">添加删除节点操作</a>
           </li>
         
       </ul>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>变量的命名和弱引用 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="变量的命名和弱引用 标识符：所有用户自定义的名字叫做标识符 ​    变量名也是标识符 ​    命名规则： ​      1.只能有数字，字母，下滑线和美元符号($)组成 ​      2.不能以数字开头 ​      3.不能用保留字和关键字 ​      4.大小写敏感，如 a 和 A 随机两个不同的变量 ​      5.推荐见名思意（尽量使用英文全称） ​      6.单词个数超过两个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="变量的命名和弱引用">
+<meta property="og:url" content="http://yoursite.com/2020/07/20/%E5%8F%98%E9%87%8F%E7%9A%84%E5%91%BD%E5%90%8D%E5%92%8C%E5%BC%B1%E5%BC%95%E7%94%A8/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="变量的命名和弱引用 标识符：所有用户自定义的名字叫做标识符 ​    变量名也是标识符 ​    命名规则： ​      1.只能有数字，字母，下滑线和美元符号($)组成 ​      2.不能以数字开头 ​      3.不能用保留字和关键字 ​      4.大小写敏感，如 a 和 A 随机两个不同的变量 ​      5.推荐见名思意（尽量使用英文全称） ​      6.单词个数超过两个">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-20T10:14:47.407Z">
+<meta property="article:modified_time" content="2020-06-19T05:40:13.209Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-变量的命名和弱引用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/20/%E5%8F%98%E9%87%8F%E7%9A%84%E5%91%BD%E5%90%8D%E5%92%8C%E5%BC%B1%E5%BC%95%E7%94%A8/" class="article-date">
+  <time datetime="2020-07-20T10:14:47.407Z" itemprop="datePublished">2020-07-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      变量的命名和弱引用
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="变量的命名和弱引用"><a href="#变量的命名和弱引用" class="headerlink" title="变量的命名和弱引用"></a>变量的命名和弱引用</h1><p> 标识符：所有用户自定义的名字叫做标识符</p>
+<p>​    变量名也是标识符</p>
+<p>​    命名规则：</p>
+<p>​      1.只能有数字，字母，下滑线和美元符号($)组成</p>
+<p>​      2.不能以数字开头</p>
+<p>​      3.不能用保留字和关键字</p>
+<p>​      4.大小写敏感，如 a 和 A 随机两个不同的变量</p>
+<p>​      5.推荐见名思意（尽量使用英文全称）</p>
+<p>​      6.单词个数超过两个</p>
+<p>​        &lt;1&gt;驼峰式命名</p>
+<p>​          className</p>
+<p>​        &lt;2&gt;下划线命名</p>
+<p>​          class_naem</p>
+<p>变量：弱引用类型，赋值成什么数据类型就是什么数据类型</p>
+<p>​      【注】不建议改变变量的数据类型。便于阅读代码</p>
+<p>​    关键字：</p>
+<p>​      typeof</p>
+<p>​      格式： typeof 常量/变量</p>
+<p>​      功能： 返回当前常量或变量的数据类型(返回的是字符串类型)；</p>
+<p>e.g.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="keyword">typeof</span> <span class="keyword">typeof</span> <span class="literal">undefined</span>);</span><br></pre></td></tr></table></figure>
+
+<p>结果：（警告框弹出）</p>
+<p>​        string</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/20/%E5%8F%98%E9%87%8F%E7%9A%84%E5%91%BD%E5%90%8D%E5%92%8C%E5%BC%B1%E5%BC%95%E7%94%A8/" data-id="ckcuct4bq0010qgvdgn6xcny7" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/07/20/%E5%B8%B8%E9%87%8F%E5%92%8C%E5%8F%98%E9%87%8F/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          常量和变量
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/07/20/Math%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B9%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Math对象的方法</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/07/20/%E5%AD%97%E7%AC%A6%E4%B8%B2/">字符串</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/20/%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F%E7%89%87%E5%A4%B4/">严格模式片头</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/20/%E8%87%AA%E5%B7%B1%E5%AE%9E%E7%8E%B0getElementsByClassName/">自己实现getElementsByClassName</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/20/%E6%96%87%E6%A1%A3%E7%A2%8E%E7%89%87%E5%AE%9E%E4%BE%8B/">文档碎片实例</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/20/%E6%B7%BB%E5%8A%A0%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9%E6%93%8D%E4%BD%9C/">添加删除节点操作</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

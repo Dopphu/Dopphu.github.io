@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>数组 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="数组 数组的声明 ​        1.通过new创建数组 ​        2.省略new运算符创建数组 ​        3.数组常量进行赋值（JS中一般使用中括号[]） 1var arr &#x3D; [1,2,...,n];  数组.length返回数组中元素个数 ​    访问数组元素： ​                数组[下标]  下标从0开始   乱入… 1Math.random(n,m)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数组">
+<meta property="og:url" content="http://yoursite.com/2020/07/20/%E6%95%B0%E7%BB%84/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="数组 数组的声明 ​        1.通过new创建数组 ​        2.省略new运算符创建数组 ​        3.数组常量进行赋值（JS中一般使用中括号[]） 1var arr &#x3D; [1,2,...,n];  数组.length返回数组中元素个数 ​    访问数组元素： ​                数组[下标]  下标从0开始   乱入… 1Math.random(n,m)">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-20T10:14:47.828Z">
+<meta property="article:modified_time" content="2020-06-19T14:06:32.295Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-数组" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/20/%E6%95%B0%E7%BB%84/" class="article-date">
+  <time datetime="2020-07-20T10:14:47.828Z" itemprop="datePublished">2020-07-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数组
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><ol>
+<li><p>数组的声明</p>
+<p>​        1.通过new创建数组</p>
+<p>​        2.省略new运算符创建数组</p>
+<p>​        3.数组常量进行赋值（JS中一般使用中括号[]）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,...,n];</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>数组.length</code>返回数组中元素个数</p>
+<p>​    访问数组元素：</p>
+<p>​                数组[下标]  下标从0开始</p>
+</li>
+</ol>
+<p>乱入…</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.random(n,m);<span class="comment">//左闭右开，随机小数</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>for循环遍历数组</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> arr)&#123;</span><br><span class="line">    <span class="comment">//empty</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li><p>数组是引用数据类型</p>
+<p>​    数组，数组的变量存储的是数据的地址</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>];</span><br><span class="line">alert(arr);<span class="comment">//警告框：10,20,30,40</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>数组的方法</p>
+<p>数组的方法：</p>
+<p>​        栈结构：</p>
+<p>​          栈：木盆</p>
+<p>​          结构：从同一头进，从同一头出</p>
+<p>​          特点：先进后出</p>
+<p>​        数组的两个方法形成栈结构</p>
+<p>​          <code>push</code></p>
+<p>​            格式：<code>数组.push(参数1,参数2,...)</code></p>
+<p>​            功能：给数组的末尾添加元素。</p>
+<p>​            返回值：插完元素以后数组的长度。</p>
+<p>​          <code>pop</code></p>
+<p>​            格式：<code>数组.pop()</code></p>
+<p>​            参数：没有参数。</p>
+<p>​            返回值：取下的那一个元素。</p>
+<p>​            功能：从数组末尾取下一个元素。</p>
+<p>​        队列结构：</p>
+<p>​          结构：从末尾进，从头部出</p>
+<p>​          特点：先进先出</p>
+</li>
+</ol>
+<p>   ​            <code>push</code></p>
+<p>   ​            <code>shift()</code></p>
+<p>   ​              格式：<code>数组.shift()</code></p>
+<p>   ​              参数：没有参数。</p>
+<p>   ​              功能：从数组的头部取下一个元素。</p>
+<p>   ​              返回值：取下的元素。</p>
+<p>   ​            </p>
+<p>   ​            <code>unshift()</code></p>
+<p>   ​              格式：<code>数组.unshift(参数1,参数2,...)</code></p>
+<p>   ​              功能：从数组的头部插入元素。</p>
+<p>   ​              返回值：插完元素以后数组的长度。</p>
+<p>   ​              【注】就算传入的数据是数组，数组中的元素要单独挑出来再进行合并。</p>
+<p>   ​        <code>concat()</code></p>
+<p>   ​        1.拷贝原数组，生成新数组</p>
+<p>   ​        2.合并数组</p>
+<p>   ​          格式：<code>数组.contact(数据1,数据2,...)</code></p>
+<p>   ​          返回值：合并产生的新数组，原数组不会改变。</p>
+<p>   ​        <code>slice()</code></p>
+<p>   ​          格式：数组.slice(start,end) 区间左闭右开</p>
+<p>   ​          功能：可以基于当前数组获取指定区域的元素[start,end),提取出元素生成新数组。</p>
+<p>   ​          返回值：生成的新数组，原数组不会发生任何改变。</p>
+<p>   ​        </p>
+<p>   ​        <code>splice()</code></p>
+<p>   ​          格式：<code>数组.splice(start, length, 数据1, 数据2...)</code></p>
+<p>   ​          参数：</p>
+<p>   ​            start： 开始截取的位置</p>
+<p>   ​            length： 截取元素的长度（原数组发生改变）</p>
+<p>   ​            第三个及之后的参数： 在start位置，在原数组插入的元素</p>
+<p>   ​          返回值：截取下来的元素组成的数组 </p>
+<p>   ​          【注】在视觉上可以用来修改原数组的值</p>
+<p>   ​        </p>
+<p>   ​        <code>join()</code></p>
+<p>   ​          格式：<code>数组.join(字符串)</code></p>
+<p>   ​          功能：将数组中的元素，用传入的拼接符，拼接成一个字符串</p>
+<p>   ​          返回值：拼接好的新字符串,原数组不变。</p>
+<p>   ​    </p>
+<p>   ​        <code>reverse()</code> </p>
+<p>   ​          功能：将数组逆序，原数组改变</p>
+<p>   ​          返回值：已经逆序的原数组</p>
+<p>   ​        <code>sort()</code></p>
+<p>   ​          从小到大排序，默认按字符串排序</p>
+<p>   ​          参数：一个函数，代表你要怎样进行排序</p>
+<p>   ​            例如：</p>
+<pre><code>            <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">arr.sort(<span class="function"><span class="keyword">function</span> (<span class="params">value1,value2</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> value1 - value2;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//从小到大排序</span></span><br><span class="line"><span class="comment">//value1 和 value2换过来即为从大到小排序</span></span><br></pre></td></tr></table></figure>
+
+数组是引用数据类型</code></pre><p>   ​    数组，数组的变量存储的是数据的地址</p>
+<ol start="6">
+<li>二维数组（非官方概念）</li>
+</ol>
+<p>例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = <span class="built_in">Array</span>(</span><br><span class="line">            [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>],</span><br><span class="line">            [<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>],</span><br><span class="line">            <span class="number">100</span>,</span><br><span class="line">            [<span class="number">16</span>,<span class="number">17</span>,<span class="number">18</span>,<span class="number">19</span>,<span class="number">20</span>],</span><br><span class="line">            [<span class="number">21</span>,<span class="number">22</span>,<span class="number">23</span>,<span class="number">24</span>,<span class="number">25</span>]</span><br><span class="line">        );</span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li>ECMA6数组新特性待补充</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/20/%E6%95%B0%E7%BB%84/" data-id="ckcuct4c70017qgvd6l0l88hy" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/07/20/%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          算数运算符
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/07/20/%E5%B1%9E%E6%80%A7%E8%8A%82%E7%82%B9/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">属性节点</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/07/20/%E5%AD%97%E7%AC%A6%E4%B8%B2/">字符串</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/20/%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F%E7%89%87%E5%A4%B4/">严格模式片头</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/20/%E8%87%AA%E5%B7%B1%E5%AE%9E%E7%8E%B0getElementsByClassName/">自己实现getElementsByClassName</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/20/%E6%96%87%E6%A1%A3%E7%A2%8E%E7%89%87%E5%AE%9E%E4%BE%8B/">文档碎片实例</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/20/%E6%B7%BB%E5%8A%A0%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9%E6%93%8D%E4%BD%9C/">添加删除节点操作</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>JavaScript☞看看事件捕获和事件冒泡 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="JavaScript☞看看事件捕获和事件冒泡事件捕获（事件监听器）： element.addEventListener(event, function, useCapture); ​      第一个参数是事件的类型（比如 “click” 或 “mousedown”）。注意：不要加on ​      第二个参数是当事件发生时我们需要调用的函数。 ​      第三个参数是布尔值，指定使用事件冒泡还">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript☞看看事件捕获和事件冒泡">
+<meta property="og:url" content="http://yoursite.com/2020/07/20/JavaScript%E2%98%9E%E7%9C%8B%E7%9C%8B%E4%BA%8B%E4%BB%B6%E6%8D%95%E8%8E%B7%E5%92%8C%E4%BA%8B%E4%BB%B6%E5%86%92%E6%B3%A1/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="JavaScript☞看看事件捕获和事件冒泡事件捕获（事件监听器）： element.addEventListener(event, function, useCapture); ​      第一个参数是事件的类型（比如 “click” 或 “mousedown”）。注意：不要加on ​      第二个参数是当事件发生时我们需要调用的函数。 ​      第三个参数是布尔值，指定使用事件冒泡还">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-20T10:14:45.816Z">
+<meta property="article:modified_time" content="2020-06-23T12:46:14.133Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-JavaScript☞看看事件捕获和事件冒泡" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/20/JavaScript%E2%98%9E%E7%9C%8B%E7%9C%8B%E4%BA%8B%E4%BB%B6%E6%8D%95%E8%8E%B7%E5%92%8C%E4%BA%8B%E4%BB%B6%E5%86%92%E6%B3%A1/" class="article-date">
+  <time datetime="2020-07-20T10:14:45.816Z" itemprop="datePublished">2020-07-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript☞看看事件捕获和事件冒泡
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="JavaScript☞看看事件捕获和事件冒泡"><a href="#JavaScript☞看看事件捕获和事件冒泡" class="headerlink" title="JavaScript☞看看事件捕获和事件冒泡"></a>JavaScript☞看看事件捕获和事件冒泡</h1><p>事件捕获（事件监听器）：</p>
+<p>element.addEventListener(event, function, useCapture);</p>
+<p>​      第一个参数是事件的类型（比如 “click” 或 “mousedown”）。注意：不要加on</p>
+<p>​      第二个参数是当事件发生时我们需要调用的函数。</p>
+<p>​      第三个参数是布尔值，指定使用事件冒泡还是事件捕获。此参数是可选的。true：事件捕获  false：事件冒泡</p>
+<p>资料出自：<a href="https://www.w3school.com.cn/js/js_htmldom_eventlistener.asp" target="_blank" rel="noopener" >点我w3c</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> aDivs = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"div"</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; aDivs.length;i++)&#123;</span><br><span class="line">        aDivs[i].addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            alert(<span class="keyword">this</span>.id);</span><br><span class="line">        &#125;, <span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+
+<p>事件冒泡（直接添加）：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i= <span class="number">0</span>;i &lt; aDivs.length; i++)&#123;</span><br><span class="line">aDivs[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> e = ev || <span class="built_in">window</span>.event;</span><br><span class="line">    alert(<span class="keyword">this</span>.id);</span><br><span class="line">    <span class="comment">//下面两行是阻止事件冒泡的代码</span></span><br><span class="line">    <span class="comment">// e.cancelBubble = true;</span></span><br><span class="line">    <span class="comment">// e.stopPropagation();</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>事件的添加方式不同</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/20/JavaScript%E2%98%9E%E7%9C%8B%E7%9C%8B%E4%BA%8B%E4%BB%B6%E6%8D%95%E8%8E%B7%E5%92%8C%E4%BA%8B%E4%BB%B6%E5%86%92%E6%B3%A1/" data-id="ckcuct4b5000hqgvddkn44t97" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/07/20/JavaScript%E2%98%9E%E4%BE%8B%E5%AD%90%E6%90%9E%E5%AE%9A%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          JavaScript☞例子搞定事件监听
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/07/20/JavaScript%E2%98%9E%E8%A7%A3%E6%9E%84/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JavaScript☞解构</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/07/20/%E5%AD%97%E7%AC%A6%E4%B8%B2/">字符串</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/20/%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F%E7%89%87%E5%A4%B4/">严格模式片头</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/20/%E8%87%AA%E5%B7%B1%E5%AE%9E%E7%8E%B0getElementsByClassName/">自己实现getElementsByClassName</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/20/%E6%96%87%E6%A1%A3%E7%A2%8E%E7%89%87%E5%AE%9E%E4%BE%8B/">文档碎片实例</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/20/%E6%B7%BB%E5%8A%A0%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9%E6%93%8D%E4%BD%9C/">添加删除节点操作</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
