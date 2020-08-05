@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://dopphu.github.io/2020/08/05/Cplusplus%E5%A4%8D%E5%88%B6%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/</loc>
+    
+    <lastmod>2020-08-05</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://dopphu.github.io/2020/08/02/demo1/</loc>
     
     <lastmod>2020-08-04</lastmod>
@@ -480,12 +487,33 @@
 
   <url>
     <loc>https://dopphu.github.io/</loc>
-    <lastmod>2020-08-04</lastmod>
+    <lastmod>2020-08-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
+  <url>
+    <loc>https://dopphu.github.io/tags/C/</loc>
+    <lastmod>2020-08-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://dopphu.github.io/tags/C-%E5%AF%B9%E8%B1%A1/</loc>
+    <lastmod>2020-08-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
+  
+  <url>
+    <loc>https://dopphu.github.io/categories/C/</loc>
+    <lastmod>2020-08-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
   
 </urlset>

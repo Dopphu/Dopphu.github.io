@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dopphu.github.io/"/>
-  <updated>2020-06-10T07:17:36.772Z</updated>
+  <updated>2020-08-05T01:20:04.990Z</updated>
   <id>https://dopphu.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C++复制构造函数</title>
+    <link href="https://dopphu.github.io/2020/08/05/Cplusplus%E5%A4%8D%E5%88%B6%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/"/>
+    <id>https://dopphu.github.io/2020/08/05/Cplusplus%E5%A4%8D%E5%88%B6%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/</id>
+    <published>2020-08-05T01:14:09.000Z</published>
+    <updated>2020-08-05T01:20:04.990Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="复制构造函数"><a href="#复制构造函数" class="headerlink" title="复制构造函数"></a>复制构造函数</h1><p>$ <strong>复制构造函数</strong>是一种特殊的构造函数，具有一般构造函数的所有特性，<strong>其形参是本类的对象的引用。其作用是使用一个已经存在的对象（由复制构造函数的参数指定），去初始化同类的一个新对象。</strong></p><p>$ <strong>隐含的复制构造函数</strong>：如果程序员没有定义类的复制构造函数，系统就会在必要时自动生成一个隐含的复制构造函数。<strong>这个隐含的构造函数会把初始值对象的每个数据成员的值都复制到新建立的对象中。</strong>（即完全拥有相同的属性。）</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">Point(<span class="keyword">int</span> xx=<span class="number">0</span>, <span class="keyword">int</span> yy=<span class="number">0</span>)&#123;</span><br><span class="line">x = xx;</span><br><span class="line">y = yy;</span><br><span class="line">&#125;</span><br><span class="line">Point(Point &amp;p);</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getX</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getY</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="keyword">return</span> y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line"><span class="keyword">int</span> x, y;</span><br><span class="line">&#125;;</span><br><span class="line">Point::Point(Point &amp;p)&#123;</span><br><span class="line">x = p.x;</span><br><span class="line">y = p.y;</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;<span class="string">"Calling the copy constructor"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func1</span><span class="params">(Point p)</span></span>&#123;</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;p.getX()&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Point <span class="title">func2</span><span class="params">()</span></span>&#123;</span><br><span class="line">Point a;</span><br><span class="line"><span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="function">Point <span class="title">a</span><span class="params">(<span class="number">4</span>,<span class="number">5</span>)</span></span>;</span><br><span class="line">Point b = a;<span class="comment">//情况一：用a初始化b。 </span></span><br><span class="line"><span class="function">Point <span class="title">c</span><span class="params">(b)</span></span>;<span class="comment">//同样是情况一，用一个对象初始化另一个对象时调用复制构造函数。 </span></span><br><span class="line"></span><br><span class="line">func1(a);<span class="comment">//情况二：函数的形参为类的对象，当调用函数时（形实结合）,复制构造函数被调用。 </span></span><br><span class="line"></span><br><span class="line">c = func2();<span class="comment">//情况三，当函数返回值是类的对象时，函数返回时，调用复制构造函数。 </span></span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;b.getX()&lt;&lt;<span class="built_in">endl</span>; </span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><img src="https://wx1.sbimg.cn/2020/08/04/PfH5k.png" alt="PfH5k.png"></p><p><strong>关于情况三</strong>：我用的Dev c++（忘了哪个版本了），运行结果显示并没有调用构造函数。书本是这么说的：</p><p><img src="https://wx1.sbimg.cn/2020/08/05/o0M82.png" alt="o0M82.png"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;复制构造函数&quot;&gt;&lt;a href=&quot;#复制构造函数&quot; class=&quot;headerlink&quot; title=&quot;复制构造函数&quot;&gt;&lt;/a&gt;复制构造函数&lt;/h1&gt;&lt;p&gt;$ &lt;strong&gt;复制构造函数&lt;/strong&gt;是一种特殊的构造函数，具有一般构造函数的所有特性，&lt;str
+      
+    
+    </summary>
+    
+    
+      <category term="C++" scheme="https://dopphu.github.io/categories/C/"/>
+    
+    
+      <category term="C++" scheme="https://dopphu.github.io/tags/C/"/>
+    
+      <category term="C++对象" scheme="https://dopphu.github.io/tags/C-%E5%AF%B9%E8%B1%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>web初始</title>
@@ -447,29 +475,6 @@
       
         &lt;h1 id=&quot;节点操作&quot;&gt;&lt;a href=&quot;#节点操作&quot; class=&quot;headerlink&quot; title=&quot;节点操作&quot;&gt;&lt;/a&gt;节点操作&lt;/h1&gt;&lt;p&gt;&lt;code&gt;document.write()&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;​        【注】会覆盖页面上原有的内容(挤
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>获取子节点</title>
-    <link href="https://dopphu.github.io/2020/07/20/%E8%8E%B7%E5%8F%96%E5%AD%90%E8%8A%82%E7%82%B9/"/>
-    <id>https://dopphu.github.io/2020/07/20/%E8%8E%B7%E5%8F%96%E5%AD%90%E8%8A%82%E7%82%B9/</id>
-    <published>2020-07-20T10:14:47.547Z</published>
-    <updated>2020-06-22T12:37:34.874Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="获取子节点"><a href="#获取子节点" class="headerlink" title="获取子节点"></a>获取子节点</h1><p><code>childNodes</code> //访问当前节点下所有的子节点</p><p><code>firstChild</code> //访问子节点中的首位</p><p><code>lastChild</code> //访问子节点中的最后一位</p><p><code>nextSibling</code>//返回指定节点之后紧跟的节点，在相同的树层级中。</p><p><code>previousSibling</code>//返回指定节点之前紧跟的节点，在相同的树层级中。</p><p>//下述这些方法只获取子节点中的元素节点 IE8以下不兼容</p><p><code>children</code>//访问当前节点下所有的子节点</p><p><code>firstElementChild</code> //访问子节点中的首位</p><p><code>lastElementChild</code>//访问子节点中的最后一位</p><p><code>nextElementSibling</code>//返回指定节点之后紧跟的节点，在相同的树层级中。</p><p><code>previousElementSibling</code>//返回指定节点之前紧跟的节点，在相同的树层级中。</p><table><thead><tr><th></th><th align="center">nodeType</th><th align="center">nodeName</th><th>nodeValue</th></tr></thead><tbody><tr><td>元素节点</td><td align="center">1</td><td align="center">标签名</td><td>null</td></tr><tr><td>属性节点</td><td align="center">2</td><td align="center">属性名</td><td>属性值</td></tr><tr><td>文本节点</td><td align="center">3</td><td align="center">#text</td><td>文本内容</td></tr></tbody></table><p>例子：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>获取子节点<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> oDiv = <span class="built_in">document</span>.getElementById(<span class="string">"div1"</span>);</span></span><br><span class="line">            alert(oDiv.childNodes.length);</span><br><span class="line"><span class="actionscript">            <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; oDiv.childNodes.length;i++)&#123;</span></span><br><span class="line">                alert(oDiv.childNodes[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        </span><br><span class="line">            alert(oDiv.firstChild.nodeName);</span><br><span class="line">            alert(oDiv.lastChild.nodeName);</span><br><span class="line">            </span><br><span class="line"><span class="actionscript">            <span class="comment">// 将空白的文本节点剔除（没有直接办法）</span></span></span><br><span class="line">            alert(oDiv.children.length);</span><br><span class="line">            alert(oDiv.firstElementChild.nodeName);</span><br><span class="line">            alert(oDiv.lastElementChild.nodeName);</span><br><span class="line">            </span><br><span class="line"><span class="actionscript">            <span class="comment">//文本节点的nodeName属性</span></span></span><br><span class="line">            alert(oDiv.firstElementChild.nextElementSibling.firstChild.nodeName)</span><br><span class="line">        &#125;         </span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div1"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">em</span>&gt;</span>em文本<span class="tag">&lt;/<span class="name">em</span>&gt;</span></span><br><span class="line">        div文本</span><br><span class="line">        <span class="tag">&lt;<span class="name">strong</span>&gt;</span>strong文本<span class="tag">&lt;/<span class="name">strong</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;获取子节点&quot;&gt;&lt;a href=&quot;#获取子节点&quot; class=&quot;headerlink&quot; title=&quot;获取子节点&quot;&gt;&lt;/a&gt;获取子节点&lt;/h1&gt;&lt;p&gt;&lt;code&gt;childNodes&lt;/code&gt; //访问当前节点下所有的子节点&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;first
       
     
     </summary>
