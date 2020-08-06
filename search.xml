@@ -1345,4 +1345,111 @@ w3c常见规范有：
 <p>路过图床：<a href="https://imgchr.com/" target="_blank" rel="noopener">https://imgchr.com/</a></p>
 ]]></content>
   </entry>
+  <entry>
+    <title>Cplusplus位域</title>
+    <url>/2020/08/06/Cplusplus%E4%BD%8D%E5%9F%9F/</url>
+    <content><![CDATA[<h1 id="位域"><a href="#位域" class="headerlink" title="位域"></a>位域</h1><p><img src="https://wx1.sbimg.cn/2020/08/06/o6NMl.png" alt="o6NMl.png"></p>
+<p>课本截图，感jio说的很详细了。</p>
+<p><strong>$</strong> 用个例子感受一下。</p>
+<p>例子：设计一个结构体存储学生的成绩信息，需要包栝学号，年级和成绩3项内容，学号的范围是0-99 999 999，年级分为：freshman，sophomore，junior，senior四种，成绩包栝A，B，C，D四个等级。</p>
+<p>分析：</p>
+<ol>
+<li><p>不使用位域：</p>
+<p>学号用整型4个字节，分别用枚举储存年级和等级（各至少占一个字节）。则共计：6字节</p>
+</li>
+<li><p>使用位域：</p>
+<p>学号要27个二进制位（2<sup>27</sup> = 134 217 728)的有效信息，而年级、成绩各需要两位二进制数就可以了。则共计：4个字节（即可存下）</p>
+</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">enum</span> Level &#123;</span><br><span class="line">	PRESHMAN, SOPHOMORE, JUNOR, SENIOR</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">enum</span> Grade &#123;</span><br><span class="line">	A, B, C, D</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> &#123;</span></span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		Student(<span class="keyword">unsigned</span> <span class="keyword">int</span> number, Level level, Grade grade)</span><br><span class="line">		:number(number), level(level), grade(grade) &#123;&#125;</span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="keyword">private</span>:</span><br><span class="line">		<span class="keyword">unsigned</span> number: <span class="number">27</span>;</span><br><span class="line">		Level level : <span class="number">2</span>;</span><br><span class="line">		Grade grade : <span class="number">2</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Student::show</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"Number:"</span>&lt;&lt;number&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"Level:    "</span>;</span><br><span class="line">	<span class="keyword">switch</span>(level)&#123;</span><br><span class="line">		<span class="keyword">case</span> PRESHMAN:</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">"freshman"</span>;<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> SOPHOMORE:</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">"sophomore"</span>;<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> JUNOR:</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">"junior"</span>;<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> SENIOR:</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">"senior"</span>;<span class="keyword">break</span>; </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>; </span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"Grade:    "</span>;</span><br><span class="line">	<span class="keyword">switch</span>(grade)&#123;</span><br><span class="line">		<span class="keyword">case</span> A:</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">"A"</span>;<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> B:</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">"B"</span>;<span class="keyword">break</span>; </span><br><span class="line">		<span class="keyword">case</span> C:</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">"C"</span>;<span class="keyword">break</span>; </span><br><span class="line">		<span class="keyword">case</span> D:</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">"D"</span>;<span class="keyword">break</span>;  </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="function">Student <span class="title">s</span><span class="params">(<span class="number">123564</span>, SOPHOMORE, C)</span></span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"Size of Student:"</span>&lt;&lt;<span class="keyword">sizeof</span>(Student)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	s.show();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行结果：</p>
+<p><img src="https://wx2.sbimg.cn/2020/08/06/o6FCd.png" alt="o6FCd.png"></p>
+<p>不同编译器第一行的结果可能不同。</p>
+<p><strong>$</strong> 再放一张课本截图吧。</p>
+<p><img src="https://wx1.sbimg.cn/2020/08/06/o6ylU.png" alt="o6ylU.png"></p>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>C++对象</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Cplusplus前向声明</title>
+    <url>/2020/08/06/Cplusplus%E5%89%8D%E5%90%91%E5%A3%B0%E6%98%8E/</url>
+    <content><![CDATA[<h1 id="前向引用声明"><a href="#前向引用声明" class="headerlink" title="前向引用声明"></a>前向引用声明</h1><p><strong>$</strong> 我们知道，C++的类应当先定义再使用。但是处理复杂问题，考虑类的组合时，很可能遇到两个类相互引用的情况，这种情况也成称为循环依赖。例如</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>&#123;</span></span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(B b)</span></span>;		<span class="comment">//以B类对象b作为形参的成员函数</span></span><br><span class="line">    					<span class="comment">//这里将引起编译错误，因为“B”为未知符号</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>&#123;</span></span><br><span class="line">  <span class="keyword">public</span>:;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">g</span><span class="params">(A a)</span></span>;		<span class="comment">//以A类对象为形参的成员函数</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>由于在使用一个类前，必须先定义该类，因此无论将哪一种类的定义放在前面，都会引起编译错误。加上如下的<strong>前向引用声明</strong>，问题就解决了。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>;</span>				<span class="comment">//前向引用声明</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>&#123;</span></span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(B b)</span></span>;		<span class="comment">//以B类对象b作为形参的成员函数</span></span><br><span class="line">    					<span class="comment">//这里将引起编译错误，因为“B”为未知符号</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>&#123;</span></span><br><span class="line">  <span class="keyword">public</span>:;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">g</span><span class="params">(A a)</span></span>;		<span class="comment">//以A类对象为形参的成员函数</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>$</strong> 使用前向引用说明虽然可以解决一些问题，但它并不是万能的。需要注意的是，尽管使用了向前引用声明，<strong>但是在提供一个完整的类定义之前，不能定义该类的对象，也不能在内联成员函数中使用该类的对象。</strong>请看下面的程序：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fred</span>;</span>				<span class="comment">//前向引用说明</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Barney</span>&#123;</span>		</span><br><span class="line">    Fred x;				<span class="comment">//错误：类Fred的定义尚不完善</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fred</span>&#123;</span></span><br><span class="line">  Barney y;  </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>对于这段程序，编译器将指出错误。原因是<strong>对类名Fred的前向引用只能说明Fred是个类名，而不能给出该类的完整定义，因此在类Barney中就不能定义类Fred的数据成员。</strong>因此使两个类以彼此的对象为数据成员，是不合法的。</p>
+<p><strong>$</strong> 再看一幅图（直接截图课本）</p>
+<p><img src="https://wx2.sbimg.cn/2020/08/06/ooIOU.png" alt="ooIOU.png"></p>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>C++对象</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Cplusplus析构函数</title>
+    <url>/2020/08/06/Cplusplus%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<h1 id="析构函数"><a href="#析构函数" class="headerlink" title="析构函数"></a>析构函数</h1><p><strong>$</strong> 析构函数与构造函数的作用几乎正好相反，它是用来完成对象被删除前的一些清理工作。<strong>析构函数是在对象的生存周期即将结束的时刻被自动调用的。</strong>它的调用完成之后对象也就消失了，相应的内存空间也会被释放。</p>
+<p><img src="https://wx1.sbimg.cn/2020/08/05/oCOg6.png" alt="oCOg6.png"></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Clock</span>&#123;</span></span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		Clock();		<span class="comment">//构造函数</span></span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">setTime</span><span class="params">(<span class="keyword">int</span> newH, <span class="keyword">int</span> newM, <span class="keyword">int</span> newS)</span></span>;</span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">showTime</span><span class="params">()</span></span>;</span><br><span class="line">		~Clock&#123;&#125;</span><br><span class="line">	<span class="keyword">private</span>:</span><br><span class="line">		<span class="keyword">int</span> hour, minute, second; </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>C++对象</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Cplusplus结构体和联合体</title>
+    <url>/2020/08/06/Cplusplus%E7%BB%93%E6%9E%84%E4%BD%93%E5%92%8C%E8%81%94%E5%90%88%E4%BD%93/</url>
+    <content><![CDATA[<h1 id="C-结构体和联合体"><a href="#C-结构体和联合体" class="headerlink" title="C++结构体和联合体"></a>C++结构体和联合体</h1><h2 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h2><p><img src="https://s1.ax1x.com/2020/08/06/acK6G8.png" alt="acK6G8.png"></p>
+<p><img src="https://s1.ax1x.com/2020/08/06/acMksH.png" alt="acMksH.png"></p>
+<p>这是关于结构体教材的截图（我觉得已经解决我大部分的疑惑了）。我对于结构体的想法是就当C语言的结构体使用就可以了，需要更复杂的数据结构就用C++的对象就好啦。</p>
+<h2 id="联合体"><a href="#联合体" class="headerlink" title="联合体"></a>联合体</h2><p><strong>$</strong> 由于联合体的成员<strong>共用相同的内存单元</strong>，联合体变量中成员同时至多只有一个是有意义的。另外，不同数据单元共用相同内存单元的特性，联合体有下面一些限制。</p>
+<ol>
+<li>联合体的各个对象成员，不能有自定义的构造函数、自定义的析构函数和重载的赋值运算符，不仅联合体的对象成员不能有这些函数，这些对象的对象成员也不能有，以此类推。</li>
+<li>联合体不能继承，因而也不支持包含多态。</li>
+</ol>
+<p><strong>$</strong> 联合体也可以不声明名称，称为无名联合体。无名联合体没有标记名，只是声明一个成员项的集合，这些成员具有相同的内存地址，可以由成员项的名字直接访问。</p>
+<p>例如，声明无名联合体如下：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">union</span> &#123;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">float</span> f;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在程序中可以这样使用：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">i = <span class="number">10</span>;</span><br><span class="line">f = <span class="number">2.2</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>$</strong> 无名联合体通常用作类或结构体的内嵌成员，下面一个例子辅助理解。</p>
+<p>先插一个枚举类型变量的语法</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">enum</span> &#123;</span><br><span class="line">		GRADE, PASS, PERFECT</span><br><span class="line">	&#125;mode;</span><br><span class="line">	mode = GRADE;</span><br><span class="line">	</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">        //mode = 1; 如果用这个语句的话会报错，我想mode就是一个只能被GRADE、PASS等赋值的变量 </span></span><br><span class="line"><span class="comment">    	报错内容：</span></span><br><span class="line"><span class="comment">    		[Error] invalid conversion from 'int' to 'main()::&lt;anonymous enum&gt;' [-fpermissive]</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">	i = PASS;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"mode:"</span>&lt;&lt;mode&lt;&lt;<span class="built_in">endl</span>&lt;&lt;<span class="string">"i:"</span>&lt;&lt;i&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>正片开始</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ExamInfo</span>&#123;</span></span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		ExamInfo(<span class="built_in">string</span> name, <span class="keyword">char</span> grade):name(name), mode(GRADE), grade(grade)&#123;&#125;</span><br><span class="line">		ExamInfo(<span class="built_in">string</span> name, <span class="keyword">bool</span> pass):name(name), mode(PASS), pass(pass)&#123;&#125;</span><br><span class="line">		ExamInfo(<span class="built_in">string</span> name, <span class="keyword">int</span> percent):name(name), mode(PERCENTAGE), percent(percent)&#123;&#125;</span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="keyword">private</span>:</span><br><span class="line">		<span class="built_in">string</span> name;		<span class="comment">//课程名称</span></span><br><span class="line">		<span class="keyword">enum</span> &#123;</span><br><span class="line">			GRADE, PASS, PERCENTAGE</span><br><span class="line">		&#125;mode;				<span class="comment">//采用何种计分方式</span></span><br><span class="line">		<span class="keyword">union</span>&#123;</span><br><span class="line">			<span class="keyword">char</span> grade;		<span class="comment">//等级制</span></span><br><span class="line">			<span class="keyword">bool</span> pass;		<span class="comment">//是否通过 pass or fail</span></span><br><span class="line">			<span class="keyword">int</span> percent;	<span class="comment">//百分制的成绩</span></span><br><span class="line">		&#125;;</span><br><span class="line">&#125;;	</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ExamInfo::show</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;name&lt;&lt;<span class="string">":"</span>;</span><br><span class="line">	<span class="keyword">switch</span>(mode)&#123;</span><br><span class="line">		<span class="keyword">case</span> GRADE:</span><br><span class="line">				<span class="built_in">cout</span>&lt;&lt;grade;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> PASS:</span><br><span class="line">				<span class="built_in">cout</span>&lt;&lt;(pass?<span class="string">"PASS"</span>:<span class="string">"FAIL"</span>);<span class="comment">//这个括号()很关键，我在这栽了。可能是结合性的问题</span></span><br><span class="line">      	<span class="comment">//cout&lt;&lt;pass?"PASS":"FAIL";这样写的话会直接打印出1.我试着把true改为false，结果变成了0。</span></span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> PERCENTAGE:</span><br><span class="line">				<span class="built_in">cout</span>&lt;&lt;percent;</span><br><span class="line">				<span class="keyword">break</span>;	</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="function">ExamInfo <span class="title">course1</span><span class="params">(<span class="string">"Math"</span>, <span class="string">'A'</span>)</span></span>;</span><br><span class="line">	<span class="function">ExamInfo <span class="title">course2</span><span class="params">(<span class="string">"P.E"</span>, <span class="literal">true</span>)</span></span>;</span><br><span class="line">	<span class="function">ExamInfo <span class="title">course3</span><span class="params">(<span class="string">"English"</span>, <span class="number">113</span>)</span></span>;</span><br><span class="line">    <span class="comment">//我忘了百分制（113&gt;100），但是不影响理解程序，不好意思。</span></span><br><span class="line">	</span><br><span class="line">	course1.show();</span><br><span class="line">	course2.show();</span><br><span class="line">	course3.show();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>程序执行结果：</p>
+<p><img src="https://wx2.sbimg.cn/2020/08/06/o6zin.png" alt="o6zin.png"></p>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
 </search>
