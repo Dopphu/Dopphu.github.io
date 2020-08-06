@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dopphu.github.io/"/>
-  <updated>2020-08-05T01:43:51.435Z</updated>
+  <updated>2020-08-06T08:39:40.852Z</updated>
   <id>https://dopphu.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于图床</title>
+    <link href="https://dopphu.github.io/2020/08/06/%E5%85%B3%E4%BA%8E%E5%9B%BE%E5%BA%8A/"/>
+    <id>https://dopphu.github.io/2020/08/06/%E5%85%B3%E4%BA%8E%E5%9B%BE%E5%BA%8A/</id>
+    <published>2020-08-06T08:39:40.771Z</published>
+    <updated>2020-08-06T08:39:40.852Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="关于图床"><a href="#关于图床" class="headerlink" title="关于图床"></a>关于图床</h1><p>免费的：（免费的弊端就是不稳定，生杀大权握在别人手中）</p><p>公益图床：<a href="https://sbimg.cn/（这个url引用的速度个人感觉比路过图床快一些）" target="_blank" rel="noopener">https://sbimg.cn/（这个url引用的速度个人感觉比路过图床快一些）</a></p><p>路过图床：<a href="https://imgchr.com/" target="_blank" rel="noopener">https://imgchr.com/</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;关于图床&quot;&gt;&lt;a href=&quot;#关于图床&quot; class=&quot;headerlink&quot; title=&quot;关于图床&quot;&gt;&lt;/a&gt;关于图床&lt;/h1&gt;&lt;p&gt;免费的：（免费的弊端就是不稳定，生杀大权握在别人手中）&lt;/p&gt;
+&lt;p&gt;公益图床：&lt;a href=&quot;https://sbimg
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>C++复制构造函数</title>
@@ -452,29 +475,6 @@
       
       
         &lt;h1 id=&quot;冒泡排序和选择排序法&quot;&gt;&lt;a href=&quot;#冒泡排序和选择排序法&quot; class=&quot;headerlink&quot; title=&quot;冒泡排序和选择排序法&quot;&gt;&lt;/a&gt;冒泡排序和选择排序法&lt;/h1&gt;&lt;h2 id=&quot;冒泡排序&quot;&gt;&lt;a href=&quot;#冒泡排序&quot; class=&quot;head
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>节点操作</title>
-    <link href="https://dopphu.github.io/2020/07/20/%E8%8A%82%E7%82%B9%E6%93%8D%E4%BD%9C/"/>
-    <id>https://dopphu.github.io/2020/07/20/%E8%8A%82%E7%82%B9%E6%93%8D%E4%BD%9C/</id>
-    <published>2020-07-20T10:14:47.563Z</published>
-    <updated>2020-06-22T12:51:33.631Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="节点操作"><a href="#节点操作" class="headerlink" title="节点操作"></a>节点操作</h1><p><code>document.write()</code></p><p>​        【注】会覆盖页面上原有的内容(挤走)</p><p><code>createElement()</code></p><p>​        格式：<code>document.createElement()</code></p><p>​        参数：标签名</p><p>​        返回值：创建好的节点</p><p><code>appendChild()</code></p><p>​        格式：<code>node1.appendChild()</code></p><p>​        功能：创建文本节点（纯文本）</p><p><code>createTextNode()</code></p><p>​        格式：<code>document.createTextNode(文本);</code></p><p>​        功能：创建文本节点（纯文本）//不解析标签</p><p><code>insertBefore()</code></p><p>​        格式：<code>box1.parentNode.insertBefore(box2, box1);</code></p><p>​        功能：将box2添加到box1前面</p><p>e.g.</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.body.insertBefore(box2, box1);</span><br></pre></td></tr></table></figure><p><code>replaceChild()</code></p><p>​        格式：<code>box1.parentNode.replaceChild(box2, box1)</code></p><p>​        功能：用box2替换box1</p><p><code>cloneNode()</code></p><p>​        格式1：<code>node.cloneNode()</code></p><p>​        格式2：<code>node.clone(true)</code>//克隆节点本身及其子节点</p><p>​        功能：返回新克隆的节点</p><p><code>removeChild()</code></p><p>​        格式：<code>box.parentNode.removeChild(box);</code></p><p>​        功能：将box节点从页面上移除</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;节点操作&quot;&gt;&lt;a href=&quot;#节点操作&quot; class=&quot;headerlink&quot; title=&quot;节点操作&quot;&gt;&lt;/a&gt;节点操作&lt;/h1&gt;&lt;p&gt;&lt;code&gt;document.write()&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;​        【注】会覆盖页面上原有的内容(挤
       
     
     </summary>
